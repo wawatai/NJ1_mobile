@@ -3,24 +3,24 @@
     width: 100%;
     height: auto;
     min-height: calc(100% - 92px);
-    background: $mainBG_2;
-    padding-bottom: 10px;
+    background: $mainBG_1;
+    overflow-y: auto;
 
     //玩家資訊
     .user {
         width: 100%;
         height: auto;
-        margin-bottom: 10px;
-        background: $mainBG_1;
-        padding-bottom: 13px;
+        background: $mainBG_3;
+        padding: 0 15px 20px;
+        box-sizing: border-box;
+        margin-bottom: 17px;
 
         .info {
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: relative;
-            padding: 20px 15px;
-            box-sizing: border-box;
+            padding: 20px 0;
             width: 100%;
             height: auto;
 
@@ -39,7 +39,8 @@
                         width: auto;
                         height: 18px;
                         margin-right: 9px;
-                        @include operateLV
+                        @include operateLV;
+                        font-size: 3.4vw;
                     }
                 }
 
@@ -47,7 +48,7 @@
                     font-size: 13px;
                     letter-spacing: 1px;
                     font-weight: bold;
-                    color: $title_Time;
+                    color: $mainWord_4;
                 }
             }
 
@@ -61,9 +62,9 @@
             .infoBtn {
                 width: auto;
                 height: auto;
-                @include mainBtn;
+                @include secondBtn;
                 font-size: 14px;
-                padding: 3px 15px;
+                padding: 3px 25px;
             }
         }
 
@@ -95,35 +96,31 @@
             justify-content: space-between;
 
             button {
-                width: 49%;
+                width: 48%;
                 height: 18.4vw;
-                @include normalBtn;
+                @include noBgBtn_Normal;
+                padding: 2vw;
 
-                .wallet_ic {
+                i {
                     display: block;
-                    width: 8.8vw;
-                    height: 8.8vw;
-                }
+                    width: 8vw;
+                    height: 8vw;
+                    flex-shrink: 0;
+                    margin-right: 4vw;
 
-                .vip_ic {
-                    display: block;
-                    width: 8.8vw;
-                    height: 8.8vw;
-                    background-position-x: 100%;
+                    &.vip_ic {
+                        background-position-x: 100%;
+                    }
                 }
 
                 .text {
-                    margin-left: 3.47vw;
-                    font-size: 18px;
+                    font-size: 4vw;
                     font-weight: bold;
                     letter-spacing: 2px;
-                    color: $title_1;
+                    text-align: left;
 
                     p {
-                        font-size: 12px;
-                        letter-spacing: 1px;
-                        color: $title_3;
-                        text-align: left;
+                        font-size: 2vw;
                     }
                 }
             }
@@ -132,42 +129,41 @@
         ul {
             display: flex;
             justify-content: space-between;
-            width: 92.26vw;
-            margin: 15px auto 0;
+            width: 100%;
+            margin: 20px auto 0;
 
             li {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                width: 20.53vw;
+                width: 25%;
                 height: auto;
                 position: relative;
 
                 i {
                     display: block;
-                    width: 10.4vw;
-                    height: 9.33vw;
+                    width: 11vw;
+                    height: 10vw;
 
                     &.deal_ic {
-                        background-position-x: -10.4vw;
+                        background-position-x: -11vw;
                     }
 
                     &.mail_ic {
-                        background-position-x: -20.8vw;
+                        background-position-x: -22vw;
                     }
 
                     &.card_ic {
-                        background-position-x: -31.2vw;
+                        background-position-x: -33vw;
                     }
                 }
 
                 p {
                     font-size: 13px;
                     font-weight: bold;
-                    letter-spacing: 1px;
-                    margin-top: 5px;
-                    color: $optionColor;
+                    margin-top: 10px;
+                    color: $mainWord_1;
                 }
 
                 .bubble {
@@ -212,9 +208,9 @@
 
         i {
             display: block;
-            margin-right: 2vw;
             width: 8vw;
             height: 8vw;
+            margin-right: 2vw;
 
             &.point_ic {
                 width: 6vw;
@@ -247,15 +243,16 @@
         .arrow_ic {
             display: block;
             width: 2vw;
-            height: 3.4vw;
+            height: 4vw;
             transform: scaleX(-1);
+            margin: 0;
         }
     }
 }
 
 //會員中心內頁滑軸
 .memberList {
-    background: $mainBG_1;
+    background: $choose_BG;
     width: 100%;
     height: auto;
 
@@ -271,14 +268,13 @@
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
-            border-bottom: solid 2px transparent;
-            font-size: 3.4vw;
+            font-size: 4vw;
             font-weight: bold;
             color: $choose_Word;
 
             &:active,&.active {
                 color: $choose_ActiveWord;
-                border-color: $choose_Border;
+                background: $choose_ActiveBG;
             }
         }
     }
@@ -289,9 +285,9 @@
     overflow-y: auto;
     width: 100%;
     height: calc(100vh - 136px);
-    padding: 10px 0;
+    padding: 15px 0;
     box-sizing: border-box;
-    background: $mainBG_2;
+    background: $mainBG_1;
 
     form {
         width: 100%;
@@ -308,29 +304,25 @@
                 height: 50px;
                 display: flex;
                 align-items: center;
-                flex-wrap: wrap;
                 justify-content: space-between;
                 box-sizing: border-box;
                 padding: 0 17px;
-                border-bottom: solid 1px $mainBorder_1;
+                margin-bottom: 20px;
 
-                &.active {
-                    height: 103px;
-
-                    button {
-                        display: block;
-                    }
+                &:last-child {
+                    margin: 0;
                 }
 
                 em {
                     position: relative;
-                    top: -1px;
+                    flex-shrink: 0;
 
                     &::before {
                         content: "※ ";
-                        color: $remind;
-                        padding: 0 5px 0 0;
+                        color: $remind_Sp;
                         font-size: 14px;
+                        font-style: italic;
+                        padding-right: 5px;
                     }
                 }
 
@@ -338,30 +330,53 @@
                     width: 20vw;
                     font-weight: bold;
                     font-size: 14px;
-                    color: $title_2;
+                    color: $mainWord_2;
+                    flex-shrink: 0;
                 }
 
                 input {
-                    width: 64vw;
-                    height: 42px;
+                    width: 100%;
+                    height: 36px;
                     @include memberInput;
                 }
 
                 button {
+                    width: 30px;
+                    height: 30px;
+                    margin-left: 10px;
+                    @include noBgBtn_Normal;
                     display: none;
-                    @include mainBtn;
-                    width: 100%;
-                    height: 42px;
-                    margin-bottom: 2px;
-                }
-            }
+                    flex-shrink: 0;
+                    position: relative;
+                    overflow: hidden;
 
-            .saveBtn {
-                display: block;
-                width: 92vw;
-                height: 42px;
-                margin: 12px auto 0;
-                @include mainBtn;
+                    &.display {
+                        display: flex;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    &.nope {
+
+                        &::before {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+
+                    &:active,&.active {
+
+                        &::before {
+                            top: -30px;
+                            filter: drop-shadow(0 36px 0 #000000);
+                        }
+                    }
+                }
             }
         }
     }
@@ -369,16 +384,23 @@
     .info_1,.info_2 {
         width: 100%;
         height: auto;
-        margin: 10px 0;
 
         &.info_2 {
+            margin-top: 15px;
 
-            span {
-                display: flex;
-                align-items: center;
+            ul {
 
-                &:nth-of-type(1) {
-                    width: 30vw;
+                li {
+                    border: none;
+
+                    span {
+        
+                        &:nth-of-type(1) {
+                            width: 100%;
+                            justify-content: flex-start;
+                            flex-shrink: 1;
+                        }
+                    }
                 }
             }
         }
@@ -391,7 +413,7 @@
             li {
                 width: 100%;
                 height: 50px;
-                padding: 0px 17px;
+                padding: 0px 16px;
                 box-sizing: border-box;
                 display: flex;
                 align-items: center;
@@ -400,39 +422,63 @@
 
                 &.forQR {
                     height: auto;
-                    padding: 10px 17px;
-
-                    span {
-
-                        &:nth-of-type(1) {
-                            width: auto;
-                        }
-                    }
+                    padding: 10px 16px;
                 }
 
                 span {
+                    width: 100%;
                     font-size: 14px;
                     font-weight: bold;
-                    color: $title_2;
+                    color: $mainWord_1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    line-height: 18px;
+
+                    &.right {
+                        justify-content: flex-end;
+                    }
 
                     &.empty {
-                        color: $remind;
+                        width: auto;
+                        color: $remind_Sp;
+                        flex-shrink: 0;
                     }
 
                     &:nth-of-type(1) {
-                        width: 20vw;
+                        width: 24vw;
+                        flex-shrink: 0;
                     }
 
                     input {
+                        @include memberInput;
                         background: none;
-                        border: none;
+                        padding: 0;
                     }
 
                     .copy {
-                        width: 47px;
-                        height: 29px;
+                        width: 30px;
+                        height: 30px;
                         @include noBgBtn_Normal;
                         margin-left: 15px;
+                        flex-shrink: 0;
+                        position: relative;
+                        overflow: hidden;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 18px;
+                            height: 18px;
+                        }
+
+                        &:active,&.active {
+
+                            &::before {
+                                top: -30px;
+                                filter: drop-shadow(0 36px 0 #000000);
+                            }
+                        }
                     }
 
                     .check,.noCheck {
@@ -440,30 +486,32 @@
                         width: 17px;
                         height: 17px;
                         margin-right: 10px;
-                    }
-
-                    .changePhoneBtn,.changePwdBtn {
-                        background: none;
-                        display: flex;
-                        align-items: center;
-                        font-size: 14px;
-                        font-weight: bold;
-                        color: $optionColor;
-                        margin-left: 10px;
-
-                        i {
-                            display: block;
-                            width: 2vw;
-                            height: 3.4vw;
-                            transform: scaleX(-1);
-                            margin-left: 8px;
-                        }
+                        flex-shrink: 0;
                     }
                 }
 
-                .qrCode {
-                    width: 100px;
-                    height: 100px;
+                .changePwdBtn {
+                    width: 30px;
+                    height: 30px;
+                    @include noBgBtn_Normal;
+                    flex-shrink: 0;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 18px;
+                        height: 18px;
+                    }
+
+                    &:active,&.active {
+
+                        &::before {
+                            top: -30px;
+                            filter: drop-shadow(0 36px 0 #000000);
+                        }
+                    }
                 }
 
                 .security {
@@ -472,6 +520,7 @@
                     @include wordBox;
 
                     span {
+                        width: auto !important;
                         margin-left: 5px;
                     }
                 }
@@ -483,29 +532,29 @@
 //會員中心平台帳戶資訊
 .memberPlatform {
     width: 100%;
-    overflow-y: auto;
     height: calc(100vh - 136px);
-    padding: 10px 4vw;
+    overflow-y: auto;
+    padding: 15px 16px;
     box-sizing: border-box;
-    background: $mainBG_2;
+    background: $mainBG_1;
 
     .platformBox {
         width: 100%;
         height: auto;
         box-sizing: border-box;
-        border: solid 1px $mainBorder_2;
+        border: solid 1px $mainBorder_1;
         border-radius: 5px;
         background: $mainBG_1;
         margin-bottom: 10px;
 
         .title {
             width: 100%;
-            height: 38px;
+            height: 45px;
             border-bottom: solid 1px $mainBorder_1;
             box-sizing: border-box;
-            padding: 0 17px;
-            color: $title_1;
-            font-size: 14px;
+            padding: 0 16px;
+            color: $mainWord_1;
+            font-size: 4.5vw;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -519,31 +568,58 @@
 
             li {
                 width: 100%;
-                height: 38px;
+                height: 45px;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
 
                 p {
-                    color: $title_2;
-                    font-size: 14px;
+                    width: 100%;
+                    color: $mainWord_2;
+                    font-size: 4vw;
                     font-weight: bold;
+                    display: flex;
+                    align-items: center;
 
-                    span {
-                        font-size: 13px;
-                        color: $mainWord_1;
+                    &:nth-of-type(1) {
+                        width: 32%;
+                        flex-shrink: 0;
                     }
 
-                    button {
-                        width: 49px;
-                        height: 28px;
-                        margin-left: 10px;
-                        @include noBgBtn_Normal;
+                    &:nth-of-type(2) {
+                        justify-content: space-between;
 
-                        &.un {
-                            opacity: 0;
-                            pointer-events: none;
+                        button {
+                            width: 30px;
+                            height: 30px;
+                            margin-left: 10px;
+                            @include noBgBtn_Normal;
+                            position: relative;
+                            overflow: hidden;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 18px;
+                                height: 18px;
+                            }
+
+                            &:active,&.active {
+
+                                &::before {
+                                    top: -30px;
+                                    filter: drop-shadow(0 36px 0 #000000);
+                                }
+                            }
+    
+                            &.un {
+                                opacity: 0;
+                                pointer-events: none;
+                            }
                         }
+                    }
+
+                    span {
+                        color: $mainWord_1;
                     }
                 }
             }

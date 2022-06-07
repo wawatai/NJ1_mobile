@@ -1,48 +1,42 @@
 //存款
 .depositWrap {
     width: 100%;
-    height: calc(100vh - 125px);
-    background: $mainBG_2;
+    height: calc(100vh - 96px);
+    background: $mainBG_1;
     overflow-y: auto;
     box-sizing: border-box;
-    padding: 10px 0;
+    padding-bottom: 15px;
 
     .depList {
         width: 100%;
         height: auto;
-        background: $mainBG_1;
-        padding: 10px 15px 15px;
-        margin-bottom: 10px;
-        display: none;
+        background: $mainBG_3;
+        padding: 16px;
+        margin-bottom: 15px;
         box-sizing: border-box;
-
-        &.display {
-            display: block;
-        }
 
         .title {
             font-size: 15px;
             letter-spacing: 1px;
-            color: $title_2;
+            color: $mainWord_1;
             font-weight: bold;
         }
 
         .listWrap {
             width: 100%;
             height: auto;
-            overflow-x: auto;
-            padding: 2px 0;
-            margin-top: 10px;
+            margin-top: 15px;
 
             ul {
-                width: auto;
+                width: 100%;
                 height: auto;
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-gap: 10px;
 
                 li {
-                    width: 22.4vw;
-                    height: 19.2vw;
-                    margin-right: 5px;
+                    width: auto;
+                    height: auto;
                     @include depositBtn;
 
                     i {
@@ -64,135 +58,131 @@
         display: none;
         width: 100%;
         height: auto;
-        padding: 10px 15px 15px;
-        margin-bottom: 10px;
+        padding: 16px;
+        margin-bottom: 15px;
         box-sizing: border-box;
-        background: $mainBG_1;
+        background: $mainBG_3;
 
         &.display {
             display: block;
         }
 
-        .title {
+        .bigTitle {
+            color: $mainWord_1;
             font-size: 15px;
-            color: $title_2;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 24px;
+        }
 
-            &:not(:nth-of-type(1)) {
-                margin-top: 15px;
+        .row {
+            width: 100%;
+            height: auto;
+            margin-bottom: 24px;
+
+            &.border {
+                border-bottom: solid 1px $mainBorder_1;
+                position: relative;
+                box-sizing: border-box;
+                padding-left: 3vw;
+
+                .copy {
+                    position: absolute;
+                    right: 0;
+                    bottom: 16px;
+                }
+            }
+
+            .title {
+                color: $mainWord_2;
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+    
+            select {
+                width: 100%;
+                height: 42px;
+                @include mainSelect;
+            }
+            
+            input {
+                width: 100%;
+                height: 42px;
+                @include mainInput;
             }
 
             .remind {
-                margin-left: 10px;
-            }
-
-            span {
                 color: $remind;
+                font-size: 12px;
+                font-weight: bold;
+                padding-top: 5px;
             }
-        }
 
-        select {
-            width: 100%;
-            height: 42px;
-            @include mainSelect;
-        }
+            .inputBox {
+                width: 100%;
+                height: auto;
+                position: relative;
+                display: flex;
+                align-items: center;
 
-        .remind {
-            font-size: 12px;
-            font-weight: bold;
-            color: $remind;
-            padding-top: 3px;
+                .firstWord {
+                    position: absolute;
+                    width: auto;
+                    height: 42px;
+                    padding: 0 15px;
+                    display: flex;
+                    align-items: center;
+                    border-right: solid 1px $mainBorder_1;
+                    left: 0;
+                    top: 0;
+                    color: $money;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
 
-            .num {
+                input {
+                    padding-left: 50px;
+                }
+            }
+
+            .copy {
+                display: flex;
+                width: 32px;
+                height: 32px;
                 margin-left: 10px;
-            }
-        }
+                flex-shrink: 0;
+                border-radius: 3px;
+                border: solid 1px $mainBorder_1;
+                position: relative;
+                align-items: center;
+                justify-content: center;
 
-        input {
-            width: 100%;
-            height: 42px;
-            @include mainInput;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+            .name {
+                color: $mainWord_4;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .text {
+                color: $remind;
+                font-size: 15px;
+                font-weight: bold;
+                padding: 16px 0;
+            }
         }
 
         .check {
             width: 100%;
             height: 42px;
             @include mainBtn;
-            margin-top: 20px;
-        }
-
-        &.already {
-            
-            .title {
-                color: $title_1;
-            }
-
-            ul {
-                width: 100%;
-                height: auto;
-
-                li {
-                    width: 100%;
-                    height: auto;
-                    padding: 15px;
-                    display: flex;
-                    align-items: center;
-                    box-sizing: border-box;
-
-                    p {
-                        font-size: 14px;
-                        font-weight: bold;
-                        color: $mainWord_1;
-
-                        &.smallTitle {
-                            color: $title_2;
-                            margin-right: 30px;
-                        }
-
-                        button {
-                            width: 12.27vw;
-                            height: 7.73vw;
-                            margin-left: 10px;
-
-                            &.copy {
-                                @include noBgBtn_Normal;
-                                font-size: 14px;
-                            }
-
-                            &.change {
-                                @include mainBtn;
-                                font-size: 14px;
-                            }
-                        }
-                    }
-
-                    .checkBox {
-                        width: 95%;
-                        height: auto;
-                        @include wordBox;
-                        padding: 15px 0;
-                        flex-direction: column;
-                        margin: 0 auto;
-
-                        p {
-                            color: $remind;
-                            display: flex;
-                            align-items: center;
-
-                            &:nth-of-type(1) {
-                                font-size: 38px;
-                                margin-bottom: 10px;
-                                color: $money;
-                            }
-                        }
-                    }
-
-                    .check {
-                        margin: 0;
-                    }
-                }
-            }
         }
     }
 
@@ -200,23 +190,30 @@
         width: 92.27vw;
         height: auto;
         margin: 0 auto;
-        @include remindBox;
+        border-radius: 5px;
+        background: $mainBG_3;
+        box-sizing: border-box;
+        padding: 16px;
 
         p {
-            font-size: 12px;
-            color: $mainWord_1;
+            color: $mainWord_3;
+            font-size: 13px;
             font-weight: bold;
             line-height: 18px;
             margin-bottom: 8px;
 
             &.title {
-                margin-bottom: 10px;
-                font-size: 14px;
+                color: $mainWord_1;
+                font-size: 16px;
                 letter-spacing: 1px;
-                color: $title_1;
+                margin: 10px 0;
+
+                &:first-child {
+                    margin-top: 0;
+                }
             }
 
-            .sp {
+            &.remind {
                 color: $remind;
             }
         }

@@ -26,8 +26,8 @@ footer {
 
             i {
                 display: block;
-                width: 20px;
-                height: 21px;
+                width: 33px;
+                height: 24px;
 
                 &.menu_ic {
                     background-position-x: 1px;
@@ -38,7 +38,7 @@ footer {
                 }
 
                 &.wallet_ic {
-                    background-position-x: 50%;
+                    background-position-x: calc(50% - 1px);
                 }
 
                 &.service_ic {
@@ -51,8 +51,14 @@ footer {
             }
 
             p {
-                font-size: 12px;
+                font-size: 2vw;
                 padding-top: 2px;
+                width: 90%;
+                text-align: center;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                transform: scale(0.7);
             }
         }
     }

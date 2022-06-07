@@ -24,18 +24,20 @@
             bottom: 0;
 
             li {
-                margin: 0 8px;
+                margin: 0;
                 
                 button {
 
                     &::before {
-                        width: 30px;
-                        height: 3px;
-                        background: $mainBG_1;
+                        width: 6px;
+                        height: 6px;
+                        background: $ad_Dot;
                         opacity: 0.5;
                         color: transparent;
                         top: 50%;
-                        transform: translateY(-50%);
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        border-radius: 50%;
                     }
                 }
 
@@ -45,7 +47,6 @@
 
                         &::before {
                             opacity: 1;
-                            background: $mainBG_1;
                         }
                     }
                 }
@@ -55,18 +56,18 @@
         .slick-prev,.slick-next {
             top: 0;
             transform: translate(0);
-            width: 13vw;
+            width: 18vw;
             height: 45vw;
             z-index: 1;
 
             &::before {
                 content: "";
                 position: absolute;
-                width: 8px;
-                height: 8px;
+                width: 14px;
+                height: 14px;
                 border-style: solid;
-                border-width: 0 0 6px 6px;
-                border-color: $mainBG_1;
+                border-width: 0 0 2px 2px;
+                border-color: $ad_Arrow;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%) rotate(45deg);

@@ -18,7 +18,7 @@
     <header>
         <!--content-->
         <div class="content">
-            <div class="title">綁定銀行卡</div>
+            <div class="title">口座設定</div>
             <i class="back_arrow" onclick="window.location.href='./member.html'"></i>
         </div>
     </header>
@@ -28,24 +28,24 @@
         <div class="cardList">
             <div class="cardBox">
                 <p class="title">
-                    卡片數量<span> 0</span> / 5
+                    口座數<span> 0</span> / 無制限
                 </p>
                 <ul>
                     <li class="empty">
                         <div class="add"></div>
-                        <p class="status">請先綁定一張銀行卡，用於收款</p>
+                        <p class="status">カードをバインドしてください</p>
                     </li>
                     <li class="wait">
                         <p class="innerTitle">中央信託</p>
                         <p class="smallTitle">010</p>
                         <p class="account">0002220003</p>
-                        <div class="ing">審核中</div>
+                        <div class="ing">レビュー中</div>
                     </li>
                     <li>
                         <p class="innerTitle">中央信託</p>
                         <p class="smallTitle">010</p>
                         <p class="account">0002220003</p>
-                        <div class="ing">審核中</div>
+                        <div class="ing">レビュー中</div>
                     </li>
                 </ul>
             </div>
@@ -54,28 +54,121 @@
         <div class="cardContent">
             <ul>
                 <li>
-                    <p class="title">銀行名稱</p>
-                    <input type="text" name="" id="">
-                    <p class="remind">輸入一個相關字，產生銀行選單</p>
+                    <p class="title">出金方法</p>
+                    <select class="mainSelect">
+                        <option value="1">銀行口座</option>
+                        <option value="2">VenusPoint</option>
+                        <option value="3">USDT</option>
+                        <option value="4">TigerPay</option>
+                        <option value="5">iWalletPay</option>
+                        <option value="6">STICPAY</option>
+                        <option value="7">imove</option>
+                    </select>
                 </li>
-                <li>
-                    <p class="title">分行名稱</p>
-                    <input type="text" name="" id="">
-                </li>
-                <li>
-                    <p class="title">開戶姓名</p>
-                    <input type="text" name="" id="" value="美術一">
-                </li>
-                <li>
-                    <p class="title">銀行帳號</p>
-                    <input type="text" name="" id="">
-                    <p class="remind">請認真校對銀行帳號，帳號錯誤資金將無法到賬!</p>
-                </li>
-                <li>
-                    <p class="title">確認帳號</p>
-                    <input type="text" name="" id="">
-                    <p class="remind">請認真校對銀行帳號，帳號錯誤資金將無法到賬!</p>
-                </li>
+                <ol class="card display">
+                    <li>
+                        <p class="title">銀行名</p>
+                        <select>
+                            <option value="" disabled selected>選択してください</option>
+                            <option value="">0009 - 三井住友銀行</option>
+                            <option value="">0001 - みずほ銀行</option>
+                        </select>
+                        <p class="remind">関連する単語を入力して、銀行名を選んでください;メニューをクリックして銀行名情報を入力し、情報が正しいことを確認してください。</p>
+                    </li>
+                    <li>
+                        <p class="title">支店コード</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">口座名義(カタカナ)</p>
+                        <input type="text" value="美術1">
+                    </li>
+                    <li>
+                        <p class="title">口座番号</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">口座番号を確認する</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">画像ファイルをアップロード</p>
+                        <div class="photo"></div>
+                        <p class="photoWord">選択済み: 0 / 2</p>
+                        <p class="photoText">フォーマットのみを受け入れる: jpg, jpeg, png</p>
+                        <p class="photoText">画像ファイルのサイズ制限: 5MB</p>
+                        <p class="photoText">図面ファイルの数を制限する: 1 ~ 2</p>
+                        <p class="photoRemind">* 運転免許証（保険証、マイナンバーカード、パスポート）の正面写真と銀行口座情報ページをアップロードしてください。ご不明な点がございましたら、すぐにカスタマーサービスにお問い合わせください。</p>
+                    </li>
+                </ol>
+                <ol class="vPoint">
+                    <li>
+                        <p class="title">VenusPoint アカウント</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">VenusPoint パスワード</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">パスワードを認証してください</p>
+                        <input type="text">
+                    </li>
+                </ol>
+                <ol class="usdt">
+                    <li>
+                        <p class="title">ウォレットアドレス</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">チャンネルを選択</p>
+                        <select>
+                            <option value="" disabled selected>選んでください</option>
+                            <option value="">TRC20</option>
+                        </select>
+                        <p class="remind">TRC20のみをサポートしている</p>
+                    </li>
+                </ol>
+                <ol class="tigerPay">
+                    <li>
+                        <p class="title">TigerPay アカウント</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">アカウントを確認してください</p>
+                        <input type="text">
+                    </li>
+                </ol>
+                <ol class="iWallet">
+                    <li>
+                        <p class="title">iWalletPay アカウント</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">アカウントを確認してください</p>
+                        <input type="text">
+                    </li>
+                </ol>
+                <ol class="sticpay">
+                    <li>
+                        <p class="title">STICPAY アカウント</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">アカウントを確認してください</p>
+                        <input type="text">
+                    </li>
+                </ol>
+                <ol class="imove">
+                    <li>
+                        <p class="title">imove アカウント</p>
+                        <input type="text">
+                    </li>
+                    <li>
+                        <p class="title">アカウントを確認してください</p>
+                        <input type="text">
+                    </li>
+                </ol>
                 <button>確認</button>
             </ul>
         </div>
@@ -85,39 +178,45 @@
         <ul>
             <li onclick="window.location.href='./index_inner.html'">
                 <i class="menu_ic"></i>
-                <p>首頁</p>
+                <p>ホーム</p>
             </li>
             <li onclick="window.location.href='./event.html'">
                 <i class="event_ic"></i>
-                <p>優惠</p>
+                <p>プロモーション</p>
             </li>
             <li onclick="window.location.href='./wallet.html'">
                 <i class="wallet_ic"></i>
-                <p>存轉提</p>
+                <p>ウォレット</p>
             </li>
             <li onclick="window.location.href='./help_often_contact.html'">
                 <i class="service_ic"></i>
-                <p>客服</p>
+                <p>カスタマーサービス</p>
             </li>
             <li onclick="window.location.href='./member.html'">
                 <i class="center_ic"></i>
-                <p>會員中心</p>
+                <p>マイページ</p>
             </li>
         </ul>
     </footer>
     <!--彈窗-->
     <div class="filter display">
         <div class="jumpWindow plsGo display">
-            <div class="title">提示</div>
-            <div class="content">請至個人頁面綁定資料</div>
-            <div class="btnBox">
+            <div class="title">
+                ヒント
+                <i class="close"></i>
+            </div>
+            <div class="content">
+                <p>先にログインください</p>
                 <button class="close">確認</button>
             </div>
         </div>
         <div class="jumpWindow plsGo2">
-            <div class="title">提示</div>
-            <div class="content">已有資料審核中</div>
-            <div class="btnBox">
+            <div class="title">
+                ヒント
+                <i class="close"></i>
+            </div>
+            <div class="content">
+                <p>レビュー中</p>
                 <button class="close">確認</button>
             </div>
         </div>

@@ -1,18 +1,19 @@
 //提款
 .withWrap {
     width: 100%;
-    min-height: calc(100vh - 92px);
-    height: auto;
-    background: $mainBG_2;
-    padding-bottom: 10px;
+    height: calc(100vh - 96px);
+    background: $mainBG_1;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    overflow-y: auto;
 
     //上半
     .walletBox {
         width: 100%;
         height: auto;
-        padding-bottom: 15px;
-        margin-bottom: 10px;
-        background: $mainBG_1;
+        background: $mainBG_3;
+        box-sizing: border-box;
+        padding: 24px 16px;
 
         //漸層
         .gradient {
@@ -20,21 +21,17 @@
             height: auto;
 
             .content {
-                width: 92vw;
-                height: 80px;
-                margin: 25px auto 16px;
+                width: 100%;
+                height: auto;
+                margin-bottom: 25px;
                 background: $mainBG_1;
                 border-radius: 5px;
-                box-shadow: 0 0 5px 0 $boxshadow_2;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
                 box-sizing: border-box;
-                padding: 10px 14px;
-                border: solid 1px $mainBorder_2;
+                padding: 12px;
+                border: solid 1px $mainBorder_1;
 
                 .title {
-                    color: $title_1;
+                    color: $mainWord_1;
                     font-size: 14px;
                     font-weight: bold;
                     display: flex;
@@ -52,29 +49,30 @@
                     font-size: 29px;
                     color: $money;
                     font-weight: bold;
+                    margin-top: 10px;
                 }
             }
 
             .detail {
                 width: 100%;
-                height: 70px;
+                height: auto;
                 box-sizing: border-box;
-                padding: 0 25px;
+                padding: 10px;
                 border-bottom: solid 1px $mainBorder_1;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
                 p {
-                    color: $title_2;
+                    color: $mainWord_2;
                     font-size: 14px;
                     font-weight: bold;
                     display: flex;
                     flex-direction: column;
 
                     button {
-                        width: 70px;
-                        height: 23px;
+                        width: auto;
+                        height: 20px;
                         @include mainBtn;
                         margin-top: 8px;
                         font-size: 12px;
@@ -93,15 +91,14 @@
             height: 42px;
             overflow: hidden;
             margin-top: 10px;
+            transition: 0.3s all;
 
             &.active {
-                height: auto;
+                height: 904px;
             }
 
             .check {
-                display: block;
-                margin: 0 auto;
-                width: 92.8vw;
+                width: 100%;
                 height: 42px;
                 @include mainBtn;
             }
@@ -111,111 +108,75 @@
                 margin-top: 10px;
     
                 ul {
-                    display: flex;
-                    flex-wrap: wrap;
+                    display: grid;
+                    grid-template-columns: repeat(3,1fr);
+                    grid-gap: 12px 8px;
                     width: 100%;
-                    box-sizing: border-box;
-                    max-height: 67.16vw;
-                    padding: 0 3.6vw;
+                    height: 852px;
                     overflow: hidden;
-    
-                    &.active {
-                        max-height: none;
-                    }
+                    transition: 0.5s all;
     
                     li {
-                        width: 30.66vw;
-                        min-height: 16.53vw;
+                        width: auto;
+                        height: 60px;
                         box-sizing: border-box;
-                        padding: 10px 0 0 11px;
-                        margin: 0 0.26vw 0.26vw 0;
-                        border: solid 1px $mainBorder_1;
-                        border-radius: 1.5vw;
-    
-                        &:nth-of-type(3n) {
-                            margin-right: 0;
-                        }
+                        padding: 10px;
+                        border-radius: 5px;
+                        background: $mainBG_2;
+                        overflow: hidden;
+                        transition: 0.3s all;
     
                         div {
-                            font-size: 12px;
                             letter-spacing: 1px;
-                            color: $title_2;
+                            color: $mainWord_1;
+                            font-size: 12px;
                             font-weight: bold;
-                            display: flex;
-                            align-items: center;
-
-                            .smallInfo {
-                                display: block;
-                                width: 18px;
-                                height: 18px;
-                                margin-left: 5px;
-                                position: relative;
-                                opacity: 0;
-                                pointer-events: none;
-        
-                                &.display {
-                                    opacity: 1;
-                                    pointer-events: visible;
-                                }
-        
-                                &:hover,&:active,&.active {
-        
-                                    .inner {
-                                        display: block;
-                                    }
-                                }
-        
-                                .inner {
-                                    display: none;
-                                    width: auto;
-                                    height: auto;
-                                    @include smallTip;
-                                    padding: 6px 18px;
-                                    position: absolute;
-                                    left: 50%;
-                                    transform: translateX(-50%);
-                                    bottom: -30px;
-                                }
-                            }
+                            width: 100%;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            // display: flex;
+                            // align-items: center;
+    
+                            // .smallInfo {
+                            //     display: block;
+                            //     width: 18px;
+                            //     height: 18px;
+                            //     margin-left: 5px;
+                            //     position: relative;
+                            //     opacity: 0;
+                            //     pointer-events: none;
+    
+                            //     &.display {
+                            //         opacity: 1;
+                            //         pointer-events: visible;
+                            //     }
+    
+                            //     &:hover,&:active,&.active {
+    
+                            //         .inner {
+                            //             display: block;
+                            //         }
+                            //     }
+    
+                            //     .inner {
+                            //         display: none;
+                            //         width: auto;
+                            //         height: auto;
+                            //         @include smallTip;
+                            //         position: absolute;
+                            //         left: 50%;
+                            //         transform: translateX(-50%);
+                            //         bottom: -30px;
+                            //     }
+                            // }
                         }
     
                         p {
-                            margin-top: 10px;
+                            margin-top: 8px;
                             font-size: 17px;
-                            color: $mainWord_1;
+                            color: $money;
                             font-weight: bold;
-                        }
-                    }
-                }
-    
-                .openBtn {
-                    width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    height: auto;
-                    margin-top: 15px;
-    
-                    div {
-                        font-size: 13px;
-                        letter-spacing: 1px;
-                        font-weight: bold;
-                        color: $optionColor;
-                        display: flex;
-                        align-items: center;
-    
-                        &.active {
-    
-                            .db_arrow {
-                                transform: rotate(180deg);
-                            }
-                        }
-    
-                        .db_arrow {
-                            display: block;
-                            width: 12px;
-                            height: 12px;
-                            margin-left: 9px;
-                            transition: all 0.5s ease;
                         }
                     }
                 }
@@ -228,10 +189,44 @@
         width: 100%;
         height: auto;
         background: $mainBG_1;
-        padding: 10px 14px;
+        padding: 16px;
         box-sizing: border-box;
+        margin-top: 10px;
+        background: $mainBG_3;
 
-        .remind {
+        .row {
+            width: 100%;
+            height: auto;
+            margin-bottom: 16px;
+
+            .title {
+                color: $mainWord_2;
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            input {
+                width: 100%;
+                height: 42px;
+                @include mainInput;
+            }
+
+            select {
+                width: 100%;
+                height: 42px;
+                @include mainSelect;
+            }
+
+            .remind {
+                color: $remind;
+                font-size: 12px;
+                font-weight: bold;
+                margin-top: 8px;
+            }
+        }
+
+        .remindBox {
             width: 100%;
             height: auto;
             margin-bottom: 10px;
@@ -241,56 +236,47 @@
             line-height: 18px;
         }
 
-        select {
-            width: 100%;
-            height: 42px;
-            @include mainSelect;
-        }
-        
-        .smallRemind {
-            margin-top: 5px;
-            color: $remind;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        input {
-            width: 100%;
-            height: 42px;
-            margin-top: 25px;
-            @include mainInput;
-        }
-
         .check {
             width: 100%;
             height: 42px;
             @include mainBtn;
             margin-top: 10px;
         }
+
+        .changeBox {
+            display: none;
+
+            &.display {
+                display: block;
+            }
+        }
     }
 
     //提醒
-    .remindBox {
+    .bottomRemindBox {
         width: 92.27vw;
         height: auto;
-        margin: 10px auto 0;
-        @include remindBox;
+        margin: 16px auto 0;
+        background: $mainBG_3;
+        border-radius: 5px;
+        box-sizing: border-box;
+        padding: 16px;
 
         p {
-            font-size: 12px;
-            color: $mainWord_1;
+            color: $mainWord_3;
+            font-size: 14px;
             font-weight: bold;
             line-height: 18px;
             margin-bottom: 8px;
 
             &.title {
-                margin-bottom: 10px;
-                font-size: 14px;
+                color: $mainWord_1;
+                font-size: 16px;
                 letter-spacing: 1px;
-                color: $title_1;
+                margin-bottom: 10px;
             }
 
-            .sp {
+            &.remind {
                 color: $remind;
             }
         }

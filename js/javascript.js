@@ -17,29 +17,40 @@ $(function(){
         $(this).siblings().removeClass('active');
     })
 
-    $('.gameList .slotBtn').click(function(){
-        $('.gameBox.slotBox').addClass('display');
-        $('.gameBox.slotBox').siblings().removeClass('display');
+    $(".gameList .hotBtn").click(function(){
+        $(".gameBox.hotBox")
+        .addClass("display")
+        .siblings().removeClass("display")
     })
-    $('.gameList .fishBtn').click(function(){
-        $('.gameBox.fishBox').addClass('display');
-        $('.gameBox.fishBox').siblings().removeClass('display');
+    $(".gameList .loveBtn").click(function(){
+        $(".gameBox.loveBox")
+        .addClass("display")
+        .siblings().removeClass("display")
     })
-    $('.gameList .liveBtn').click(function(){
-        $('.gameBox.liveBox').addClass('display');
-        $('.gameBox.liveBox').siblings().removeClass('display');
+    $(".gameList .sportBtn").click(function(){
+        $(".gameBox.sportBox")
+        .addClass("display")
+        .siblings().removeClass("display")
     })
-    $('.gameList .sportBtn').click(function(){
-        $('.gameBox.sportBox').addClass('display');
-        $('.gameBox.sportBox').siblings().removeClass('display');
+    $(".gameList .liveBtn").click(function(){
+        $(".gameBox.liveBox")
+        .addClass("display")
+        .siblings().removeClass("display")
     })
-    $('.gameList .lotteryBtn').click(function(){
-        $('.gameBox.lotteryBox').addClass('display');
-        $('.gameBox.lotteryBox').siblings().removeClass('display');
+    $(".gameList .slotBtn").click(function(){
+        $(".gameBox.slotBox")
+        .addClass("display")
+        .siblings().removeClass("display")
     })
-    $('.gameList .boardBtn').click(function(){
-        $('.gameBox.boardBox').addClass('display');
-        $('.gameBox.boardBox').siblings().removeClass('display');
+    $(".gameList .fishBtn").click(function(){
+        $(".gameBox.fishBox")
+        .addClass("display")
+        .siblings().removeClass("display")
+    })
+    $(".gameList .boardBtn").click(function(){
+        $(".gameBox.boardBox")
+        .addClass("display")
+        .siblings().removeClass("display")
     })
 })
 
@@ -59,14 +70,19 @@ $(function(){
         $('.filter,.forgetWindow').addClass('display');
     })
 
-    $('.registerBtn,.ruleWindow .back').click(function(){
+    $('.signupBtn,.ruleWindow .back').click(function(){
         $('.jumpWindow').removeClass('display');
         $('.filter,.registerWindow').addClass('display');
     })
 
-    $('.registerWindow .isCheck p').click(function(){
+    $('.registerWindow .isCheck .ruleBtn').click(function(){
         $('.jumpWindow').removeClass('display');
         $('.filter,.ruleWindow').addClass('display');
+    })
+
+    $('.memberWrap .opLang').click(function(){
+        $('.jumpWindow').removeClass('display');
+        $('.filter,.langWindow').addClass('display');
     })
 
     $(".applyList .applyBtn").click(function(){
@@ -85,6 +101,11 @@ $(function(){
     $(".changePwdBtn").click(function(){
         $('.jumpWindow').removeClass('display');
         $('.filter,.passwordWindow').addClass('display');
+    })
+
+    $(".opDownload").click(function(){
+        $('.jumpWindow').removeClass('display');
+        $('.filter,.downloadBox').addClass('display');
     })
 
     $(".vipWrap .topBox .check").click(function(){
@@ -127,61 +148,38 @@ function unlogin(){
     $('.filter,.plsGo').addClass('display');
 }
 
-//register choose
-$(function(){
-    $('.jumpWindow .choose .line').click(function(){
-        $('.line').removeClass('display');
-        $('.weChat').addClass('display');
-    })
-
-    $('.jumpWindow .choose .weChat').click(function(){
-        $('.line').addClass('display');
-        $('.weChat').removeClass('display');
-    })
-})
-
 //news切換
 $(function(){
     $('.jumpWindow.news .typeList li').click(function(){
-        $($(this).children()).addClass('active');
-        $($(this).siblings().children()).removeClass('active');
-    })
+        $(this)
+        .addClass('active')
+        .siblings().removeClass("active");
 
-    $('.jumpWindow.news .typeList li:nth-of-type(1)').click(function(){
-        $('.jumpWindow.news .normal').addClass('display');
-        $('.jumpWindow.news .normal').siblings().removeClass('display');
-    })
+        var n = $(this).index();
 
-    $('.jumpWindow.news .typeList li:nth-of-type(2)').click(function(){
-        $('.jumpWindow.news .hot').addClass('display');
-        $('.jumpWindow.news .hot').siblings().removeClass('display');
-    })
-
-    $('.jumpWindow.news .typeList li:nth-of-type(3)').click(function(){
-        $('.jumpWindow.news .deposit').addClass('display');
-        $('.jumpWindow.news .deposit').siblings().removeClass('display');
+        $(".jumpWindow.news .content:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
 })
 
 //realLogin
 $(function(){
     $('.realLogin').click(function(){
-        $('.jumpWindow,.loginBtn').removeClass('display');
+        $('.jumpWindow,.loginBox').removeClass('display');
         $('.filter,.news,.alLogin').addClass('display');
-        $('.operate').addClass("login");
+        $(".homeCenter .gameList .loveBtn").addClass("display");
         
-        $('.gameBox.slotBox li').attr('onclick',"callSlot()");
+        $('.gameBox.hotBox li').attr('onclick',"callSlot()");
         $('.gameBox.liveBox li').attr('onclick',"callLive()");
         $('.gameBox.sportBox li').attr('onclick',"callSport()");
-        $('.gameBox.lotteryBox li').attr('onclick',"callLottery()");
-
-        $(".gameList .fishBtn").attr('onclick',"window.location.href='./html/fishPage.html'");
-        $(".gameList .boardBtn").attr('onclick',"window.location.href='./html/boardPage.html'");
+        $(".gameBox.slotBox li").attr('onclick',"window.location.href='./html/slotPage.html'");
+        $(".gameBox.fishBox li").attr('onclick',"window.location.href='./html/fishPage.html'");
+        $(".gameBox.boardBox li").attr('onclick',"window.location.href='./html/boardPage.html'");
 
         $('.operate button:eq(0)').attr('onclick',"window.location.href='./html/deposit.html'");
         $('.operate button:eq(1)').attr('onclick',"window.location.href='./html/transfer.html'");
         $('.operate button:eq(2)').attr('onclick',"window.location.href='./html/withdrawal.html'");
-        $('.operate button:eq(3)').attr('onclick',"window.location.href='./html/vip.html'");
 
         $('footer li:nth-of-type(2)').attr('onclick',"window.location.href='./html/event.html'");
         $('footer li:nth-of-type(3)').attr('onclick',"window.location.href='./html/wallet.html'");
@@ -228,6 +226,24 @@ $(function(){
     })
 })
 
+//member opLang
+$(function(){
+    $('.langWindow li').click(function(){
+        var n = $(this).index();
+
+        $(this)
+        .addClass('active')
+        .siblings().removeClass("active");
+
+        $(".options.opLang span:eq("+ n +")")
+        .addClass("active")
+        .siblings().removeClass("active")
+
+        $(".filter")
+        .removeClass("display");
+    })
+})
+
 //event .eventType切換
 $(function(){
     $('.eventType li').click(function(){
@@ -264,29 +280,6 @@ $(function(){
     $('.walletWrap .openBtn div').click(function(){
         $(this).toggleClass('active');
         $($(this).closest('.openBtn').prev('ul')).toggleClass('active');
-    })
-})
-
-//member opLang
-$(function(){
-    $('.memberWrap .opLang').click(function(){
-        $('.jumpWindow').removeClass('display');
-        $('.filter,.langWindow').addClass('display');
-    })
-
-    $('.langWindow li:nth-of-type(1)').click(function(){
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-        $('.lang_tw').addClass('active');
-        $('.lang_ch').removeClass('active');
-        $('.filter').removeClass('display');
-    })
-    $('.langWindow li:nth-of-type(2)').click(function(){
-        $(this).addClass('active');
-        $(this).siblings().removeClass('active');
-        $('.lang_tw').removeClass('active');
-        $('.lang_ch').addClass('active');
-        $('.filter').removeClass('display');
     })
 })
 
@@ -404,8 +397,12 @@ $(function(){
 
 //個人資料頁
 $(function(){
-    $(".memberInfo .chBtn").click(function(){
-        $(this).prev().toggleClass("active");
+    $(".memberInfo .chBtn.edit,.memberInfo .chBtn.check,.memberInfo .chBtn.nope").click(function(){
+        $(this).closest("li").find("input")
+        .toggleClass("active");
+
+        $(this).closest("li").find("button")
+        .toggleClass("display");
     })
 })
 
@@ -475,7 +472,7 @@ $(function(){
 $(function(){
     $(".searchContent .check").click(function(){
         $(".noData").removeClass("display");
-        $(".recordBox").addClass("display");
+        $(".recordBox,.dealBox,.partnerBox").addClass("display");
     })
 
     $(".searchContent .date button").click(function(){
@@ -483,7 +480,13 @@ $(function(){
         $(this).siblings().removeClass("active");
 
         $(".noData").addClass("display");
-        $(".recordBox").removeClass("display");
+        $(".recordBox,.dealBox,.partnerBox").removeClass("display");
+    })
+
+    $(".bettingWrap .open").click(function(){
+        $(this)
+        .toggleClass("active")
+        .prev(".innerBox").toggleClass("display");
     })
 })
 
@@ -492,19 +495,12 @@ $(function(){
     $(".depList li").click(function(){
         $(this).addClass("active");
         $(this).siblings().removeClass("active");
-    })
 
-    $(".depList li:eq(0)").click(function(){
-        $(".depContent").removeClass("display");
-        $(".depContent.card").addClass("display");
-    })
-    $(".depList li:eq(1)").click(function(){
-        $(".depContent").removeClass("display");
-        $(".depContent.atm").addClass("display");
-    })
-    $(".depList li:eq(2)").click(function(){
-        $(".depContent").removeClass("display");
-        $(".depContent.shop").addClass("display");
+        var n = $(this).index();
+
+        $(".depContent:eq("+ n +")")
+        .addClass("display")
+        .siblings().removeClass("display");
     })
 
     $(".depContent.card .check").click(function(){
@@ -548,5 +544,55 @@ $(function(){
     $('.withWrap .openBtn div').click(function(){
         $(this).toggleClass('active');
         $($(this).closest('.openBtn').prev('ul')).toggleClass('active');
+    })
+})
+
+//card
+$(function(){
+    $(".cardContent .mainSelect").change(function(){
+        var n = $(".cardContent .mainSelect").val();
+
+        if(n == 1)
+        {
+            $(".cardContent ol.card")
+            .addClass("display")
+            .siblings().removeClass("display");
+        }
+        else if(n == 2)
+        {
+            $(".cardContent ol.vPoint")
+            .addClass("display")
+            .siblings().removeClass("display");
+        }
+        else if(n == 3)
+        {
+            $(".cardContent ol.usdt")
+            .addClass("display")
+            .siblings().removeClass("display");
+        }
+        else if(n == 4)
+        {
+            $(".cardContent ol.tigerPay")
+            .addClass("display")
+            .siblings().removeClass("display");
+        }
+        else if(n == 5)
+        {
+            $(".cardContent ol.iWallet")
+            .addClass("display")
+            .siblings().removeClass("display");
+        }
+        else if(n == 6)
+        {
+            $(".cardContent ol.sticpay")
+            .addClass("display")
+            .siblings().removeClass("display");
+        }
+        else if(n == 7)
+        {
+            $(".cardContent ol.imove")
+            .addClass("display")
+            .siblings().removeClass("display");
+        }
     })
 })

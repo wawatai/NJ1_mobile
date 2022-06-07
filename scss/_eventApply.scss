@@ -11,22 +11,25 @@
 
     ul {
         display: flex;
+        overflow-x: auto;
 
         li {
-            width: 34%;
+            width: auto;
             height: 40px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            box-sizing: border-box;
-            border-bottom: solid 2px transparent;
             font-size: 3.4vw;
             font-weight: bold;
             color: $choose_Word;
+            background: $choose_BG;
+            box-sizing: border-box;
+            padding: 0 8px;
+            white-space: nowrap;
 
             &:active,&.active {
-                border-color: $choose_Border;
+                background: $choose_ActiveBG;
                 color: $choose_ActiveWord;
             }
         }
@@ -37,8 +40,8 @@
 .applyList {
     display: none;
     width: 100%;
-    height: calc(100vh - 132px);
-    background: $mainBG_2;
+    height: calc(100vh - 136px);
+    background: $mainBG_1;
     overflow-y: scroll;
     margin-top: 40px;
 
@@ -50,14 +53,14 @@
         width: 100%;
         height: auto;
         box-sizing: border-box;
-        padding: 10px 4% 0;
+        padding: 16px 24px;
 
         .list {
             margin-bottom: 15px;
             border-radius: 5px;
-            box-shadow: 0 0 13px 2px $boxshadow_1;
-            border: solid 1px $mainBorder_2;
-            background: $mainBG_1;
+            border: solid 1px $jumpWindow_Border;
+            background: $jumpWindow_BG;
+            text-align: center;
 
             .title {
                 width: 100%;
@@ -65,21 +68,20 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-bottom: solid 1px $mainBorder_1;
-                color: $title_1;
-                font-size: 16px;
+                background: $jumpWindow_TitleBG;
+                color: $jumpWindow_Title;
+                font-size: 4.2vw;
                 font-weight: bold;
             }
 
             .tips {
                 display: none;
-                width: 56vw;
-                margin: 6px auto 0;
+                width: auto;
+                margin-top: 6px;
                 @include smallTip;
-                padding: 7px 0;
 
                 &.display {
-                    display: block;
+                    display: inline-block;
                 }
 
                 em {
@@ -95,27 +97,28 @@
                     width: 100%;
                     height: auto;
                     box-sizing: border-box;
-                    padding: 6px 13px;
                     display: flex;
                     justify-content: space-between;
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: $title_2;
                     align-items: center;
+                    padding: 6px 12px;
 
                     &.cur {
-                        background: $currentBG;
+                        background: $mainBG_2;
                     }
                     
                     label {
                         flex-shrink: 0;
-                        width: 35%;
+                        width: 40%;
+                        color: $mainWord_2;
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-align: left;
                     }
 
                     p {
-                        font-size: 13px;
                         color: $mainWord_1;
-                        line-height: 18px;
+                        font-size: 14px;
+                        font-weight: bold;
 
                         em {
                             color: $remind;
@@ -142,12 +145,10 @@
 
                     &.applyBtn {
                         @include mainBtn;
-                        font-size: 16px;
                     }
 
                     &.checkBtn {
-                        @include noBgBtn_Normal;
-                        font-size: 16px;
+                        @include secondBtn;
                     }
                 }
             }
@@ -158,12 +159,11 @@
 //優惠申請紀錄
 .applyRecord {
     width: 100%;
-    height: calc(100vh - 132px);
-    background: $mainBG_2;
+    height: calc(100vh - 136px);
+    background: $mainBG_1;
     overflow-y: auto;
     margin-top: 40px;
     box-sizing: border-box;
-    padding-top: 10px;
     display: none;
 
     &.display {
@@ -173,7 +173,7 @@
     .searchContain {
         width: 100%;
         height: auto;
-        background: $mainBG_1;
+        background: $mainBG_3;
         padding: 15px;
         box-sizing: border-box;
         
@@ -193,7 +193,7 @@
                     p {
                         font-size: 14px;
                         font-weight: bold;
-                        color: $title_2;
+                        color: $mainWord_2;
                         margin-bottom: 10px;
                     }
 
@@ -207,23 +207,22 @@
                         width: 100%;
                         height: 42px;
                         border-radius: 5px;
-                        border: solid 1px $mainBorder_2;
+                        background: $mainBG_1;
+                        border: solid 1px $mainBorder_1;
                         box-sizing: border-box;
                         display: flex;
                         align-items: center;
                         justify-content: space-around;
                         font-size: 15px;
                         font-weight: bold;
-                        color: $mainWord_1;
+                        color: $mainWord_3;
 
                         input {
-                            border: none;
-                            background: none;
                             width: auto;
                             height: 100%;
-                            color: $mainWord_1;
-                            font-size: 15px;
-                            font-weight: bold;
+                            @include mainInput;
+                            border: none;
+                            background: none;
                         }
                     }
 
@@ -235,12 +234,17 @@
                         button {
                             width: 25%;
                             height: 38px;
-                            @include changeBtn;
+                            @include noBgBtn_Normal;
+                            border-left-width: 0;
 
                             &:nth-of-type(1) {
                                 border-radius: 5px 0 0 5px;
+                                border-left-width: 1px;
                             }
-                        
+                            &:nth-of-type(2),
+                            &:nth-of-type(3) {
+                                border-radius: 0;
+                            }
                             &:last-child {
                                 border-radius: 0 5px 5px 0;
                             }
@@ -265,21 +269,29 @@
         width: 100%;
         height: auto;
         box-sizing: border-box;
-        padding: 10px 4% 0;
+        padding: 10px 14px;
 
         .noData {
             display: none;
             width: 100%;
             height: auto;
             box-sizing: border-box;
-            padding: 80px;
-            color: $title_3;
+            color: $mainWord_4;
             font-weight: bold;
-            text-align: center;
             font-size: 14px;
-
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0 40px;
+    
             &.display {
+                display: flex;
+            }
+    
+            .img {
                 display: block;
+                width: 180px;
+                height: 180px;
+                margin-bottom: 20px;
             }
         }
 
@@ -287,11 +299,10 @@
             display: none;
             width: 100%;
             height: auto;
-            margin-bottom: 10px;
             background: $mainBG_1;
             border-radius: 5px;
-            box-shadow: 0 0 5px 0 $boxshadow_2;
-            border: solid 1px $mainBorder_2;
+            border: solid 1px $mainBorder_1;
+            margin-bottom: 10px;
 
             &.display {
                 display: block;
@@ -303,49 +314,41 @@
 
                 .title {
                     width: 100%;
-                    height: 38px;
+                    height: auto;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
                     box-sizing: border-box;
-                    padding: 0 20px;
+                    padding: 12px 16px;
                     border-bottom: solid 1px $mainBorder_1;
 
                     p {
-                        color: $title_1;
+                        color: $mainWord_1;
+                        font-size: 4vw;
                         font-weight: bold;
-                        font-size: 14px;
 
                         span {
-                            color: $title_2;
-
-                            &.status {
-                                color: $mainWord_1;
-                            }
+                            font-size: 3.4vw;
+                            color: $mainWord_4;
                         }
                     }
                 }
 
                 ul {
                     box-sizing: border-box;
-                    padding: 2.67vw 4vw;
+                    padding: 0 16px;
 
                     li {
                         width: 100%;
-                        height: 25px;
+                        height: 38px;
                         display: flex;
                         align-items: center;
                         justify-content: space-between;
-                        margin-bottom: 10px;
-
-                        &:last-child {
-                            margin: 0;
-                        }
 
                         p {
-                            font-size: 14px;
+                            color: $mainWord_2;
+                            font-size: 3.4vw;
                             font-weight: bold;
-                            color: $title_2;
 
                             &:last-child {
                                 color: $mainWord_1;

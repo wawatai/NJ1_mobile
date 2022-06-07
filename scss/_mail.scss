@@ -13,17 +13,17 @@
             width: 50%;
             height: 40px;
             box-sizing: border-box;
-            border-bottom: solid 2px transparent;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 4vw;
             font-weight: bold;
             color: $choose_Word;
+            background: $choose_BG;
 
             &.active {
                 color: $choose_ActiveWord;
-                border-color: $choose_Border;
+                background: $choose_ActiveBG;
             }
         }
     }
@@ -45,7 +45,7 @@
             height: auto;
             box-sizing: border-box;
             padding: 10px 15px;
-            background: $mainBG_2;
+            background: $mainBG_1;
 
             ul {
                 width: 100%;
@@ -55,7 +55,7 @@
                 li {
                     width: 50%;
                     height: 10.67vw;
-                    @include bigGrayBtn;
+                    @include noBgBtn_Normal;
 
                     &:nth-of-type(1){
                         border-radius: 5px 0 0 5px;
@@ -75,6 +75,7 @@
             padding: 16px;
             box-sizing: border-box;
             justify-content: space-between;
+            background: $mainBG_1;
             display: none;
 
             &.display {
@@ -84,8 +85,8 @@
             .all {
                 display: flex;
                 align-items: center;
-                color: $title_2;
-                font-size: 16px;
+                color: $mainWord_1;
+                font-size: 4vw;
                 font-weight: bold;
 
                 input {
@@ -99,13 +100,13 @@
                 button {
                     width: 82px;
                     height: 28px;
-                    @include noBgBtn_Color1;
+                    @include slotGameBtn_2;
                     font-size: 12px;
 
                     &.delete {
-                        @include noBgBtn_Color2;
+                        @include slotGameBtn_1;
                         font-size: 12px;
-                        margin-left: 10px;
+                        margin-left: 5px;
                     }
                 }
             }
@@ -114,8 +115,9 @@
         //內容
         .mailBox {
             width: 100%;
-            height: calc(100vh - 200px);
+            height: calc(100vh - 196px);
             overflow-y: auto;
+            background: $mainBG_1;
 
             &.editing {
                 height: calc(100vh - 260px);
@@ -141,7 +143,7 @@
                 width: 100%;
                 height: auto;
                 box-sizing: border-box;
-                padding: 15px 4%;
+                padding: 16px 24px;
 
                 li {
                     width: 100%;
@@ -158,7 +160,6 @@
                         align-items: flex-end;
                         font-size: 16px;
                         font-weight: bold;
-                        color: $title_2;
                     }
 
                     .textBox {
@@ -176,18 +177,16 @@
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            color: $mainWord_1;
                             font-size: 14px;
                             font-weight: bold;
                         }
 
                         .date {
                             position: absolute;
-                            top: 0;
+                            top: 6px;
                             right: 30px;
                             font-size: 13px;
                             font-weight: bold;
-                            color: $title_Time;
                         }
                     }
 
@@ -222,8 +221,8 @@
             width: 100%;
             height: auto;
             box-sizing: border-box;
-            padding: 10px 15px;
-            background: $mainBG_2;
+            padding: 10px 16px;
+            background: $mainBG_1;
 
             ul {
                 width: 100%;
@@ -233,12 +232,15 @@
                 li {
                     width: 34%;
                     height: 10.67vw;
-                    @include bigGrayBtn;
+                    @include noBgBtn_Normal;
                     
                     &:nth-of-type(1) {
                         border-radius: 5px 0 0 5px;
                     }
-
+                    &:nth-of-type(2) {
+                        border-radius: 0;
+                        border-width: 1px 0;
+                    }
                     &:last-child {
                         border-radius: 0 5px 5px 0;
                     }
@@ -249,8 +251,9 @@
         //內容
         .mailBox {
             width: 100%;
-            height: calc(100vh - 200px);
+            height: calc(100vh - 196px);
             overflow-y: auto;
+            background: $mainBG_1;
 
             &.hot,&.nor,&.dep {
                 display: none;
@@ -264,25 +267,24 @@
                 width: 100%;
                 height: auto;
                 box-sizing: border-box;
-                padding: 15px 4%;
+                padding: 16px 24px;
 
                 li {
                     width: 100%;
                     height: auto;
                     margin-bottom: 10px;
-                    @include mailWrap;
+                    @include mailWrap_2;
 
                     p {
                         width: 100%;
                         height: auto;
                         box-sizing: border-box;
-                        padding: 30px;
+                        padding: 24px 15px;
                         font-size: 16px;
                         font-weight: bold;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                        color: $title_2;
                     }
                 }
             }
@@ -292,40 +294,25 @@
 
 //內文
 .mailContent {
-    width: 90%;
-    height: calc(100vh - 125px);
+    width: 100%;
+    height: calc(100vh - 96px);
     overflow-y: auto;
     box-sizing: border-box;
-    padding: 10vw 15px;
-    border-radius: 10px;
-    margin: 15px auto;
-    box-shadow: 0 2px 4px 0 $boxshadow_1;
+    padding: 10vw 35px;
     position: relative;
     background: $mainBG_1;
-    border: solid 1px $mainBorder_2;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 8vw;
-        border-radius: 10px 10px 0 0;
-        background: $mailCnt_TopBG;
-    }
-
-    .title {
-        margin: 20px 0;
-        font-size: 17px;
+    .date {
+        margin: 22px 0;
+        font-size: 4vw;
         font-weight: bold;
-        color: $title_2;
+        color: $mainWord_4;
     }
 
     .msg {
-        line-height: 20px;
-        font-size: 14px;
+        line-height: 6vw;
+        font-size: 4.5vw;
         font-weight: bold;
-        color: $mainWord_1;
+        color: $mainWord_3;
     }
 }

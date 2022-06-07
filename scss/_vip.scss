@@ -1,52 +1,63 @@
 //VIP會員
 .vipWrap {
     width: 100%;
-    height: calc(100vh - 94px);
+    height: calc(100vh - 96px);
     overflow-y: auto;
-    background: $mainBG_2;
+    background: $mainBG_1;
 
     //上部
     .topBox {
         width: 100%;
         height: auto;
-        padding-bottom: 20px;
-        background: $mainBG_1;
+        padding-bottom: 5px;
+        background: $mainBG_3;
 
         .board {
             width: 100%;
             height: auto;
             box-sizing: border-box;
-            padding: 0 4vw 7.46vw;
-            border-radius: 0 0 40px 40px;
-            box-shadow: 0 0 13px 2px $boxshadow_1;
-            background: $mainBG_1;
-            margin-bottom: 6.66vw;
+            padding: 0 16px 16px;
 
             .content {
                 position: relative;
                 padding-top: 12px;
                 width: 100%;
                 height: auto;
-                margin-bottom: 13.33vw;
 
                 .account {
-                    font-size: 16px;
-                    margin-bottom: 12px;
+                    font-size: 4.3vw;
+                    margin-bottom: 18px;
                     letter-spacing: 2px;
                     font-weight: bold;
-                    color: $title_1;
+                    color: $mainWord_1;
                 }
 
                 .textBox {
-                    margin-bottom: 12px;
-                    font-size: 13px;
-                    letter-spacing: 1px;
-                    color: $title_2;
-                    font-weight: bold;
+                    display: flex;
+                    margin-bottom: 15px;
 
-                    span {
-                        font-size: 14px;
-                        color: $mainWord_1;
+                    &>p {
+                        width: 30vw;
+                        color: $mainWord_4;
+                        font-size: 13px;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                    }
+
+                    div {
+                        width: auto;
+                        height: auto;
+
+                        p {
+                            color: $mainWord_4;
+                            font-size: 15px;
+                            font-weight: bold;
+
+                            &:first-child {
+                                color: $mainWord_2;
+                                margin-bottom: 6px;
+                            }
+                        }
                     }
                 }
 
@@ -54,8 +65,8 @@
                     width: 22.93vw;
                     height: 30.13vw;
                     position: absolute;
-                    top: 0;
-                    right: 5.6vw;
+                    top: 3vw;
+                    right: 1.5vw;
                 }
             }
 
@@ -74,11 +85,7 @@
                         letter-spacing: 1px;
                         font-weight: bold;
                         font-size: 14px;
-                        color: $title_2;
-
-                        &.cur {
-                            color: $title_1;
-                        }
+                        color: $mainWord_2;
                     }
                 }
 
@@ -87,172 +94,24 @@
                     height: 8px;
                     border-radius: 4px;
                     background: $vip_LevelBar;
-
-                    .cur {
-                        position: relative;
-                        width: 20%;
-                        height: 100%;
-                        border-radius: 4px;
-                        background: $vip_LevelCur;
-
-                        // .percent {
-                        //     width: auto;
-                        //     height: auto;
-                        //     @include smallTip;
-                        //     padding: 3px 9px;
-                        //     position: absolute;
-                        //     top: -28px;
-                        //     right: -20px;
-
-                        //     &::before {
-                        //         top: unset;
-                        //         bottom: -6px;
-                        //     }
-                        // }
-                    }
-                }
-            }
-
-            // .btnBox {
-            //     width: 100%;
-            //     height: auto;
-            //     display: flex;
-            //     justify-content: space-between;
-            //     margin-top: 6.66vw;
-
-            //     button {
-            //         width: 43.2vw;
-            //         height: 42px;
-            //         @include mainBtn;
-            //         font-size: 3.7vw;
-
-            //         &.check {
-            //             @include noBgBtn_Normal
-            //             font-size: 3.7vw;
-            //         }
-            //     }
-            // }
-        }
-
-        .levelBox {
-            width: 92vw;
-            height: 5.33vw;
-            margin: 0 auto;
-            position: relative;
-
-            div {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-
-                hr {
-                    width: 100%;
-                    border: solid 1px $mainBorder_1;
-                }
-            }
-
-            ul {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 2;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                overflow-x: auto;
-
-                li {
+                    position: relative;
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    flex-shrink: 0;
-                    width: 10.66vw;
-                    height: 100%;
-                    margin-right: 10.99vw;
-                    background: $vip_LevelBG;
-                    border-radius: 3vw;
-                    font-size: 13px;
-                    color: $vip_Word;
-                    box-sizing: border-box;
-                    padding-bottom: 2px;
 
-                    &.cur {
-                        background: $vip_LevelLinear;
-                    }
+                    .cur {
+                        position: absolute;
+                        width: auto;
+                        height: auto;
+                        border-radius: 4px;
+                        background: $vip_LevelCur;
+                        left: 0;
+                        padding: 2px 5px;
+                        border-radius: 30px;
 
-                    &:last-child {
-                        margin: 0;
-                    }
-                }
-            }
-        }
-
-        .cardBox {
-            width: 100%;
-            height: 47.46vw;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-sizing: border-box;
-            padding: 0 1vw;
-            margin-top: 5.33vw;
-
-            i {
-                display: block;
-                width: 2vw;
-                height: 3.4vw;
-
-                &.next {
-                    transform: scaleX(-1);
-                }
-            }
-
-            .card {
-                width: 87.27vw;
-                height: 47.46vw;
-                overflow-x: auto;
-                
-                ul {
-                    display: flex;
-                    width: auto;
-                    height: auto;
-
-                    li {
-                        position: relative;
-                        display: flex;
-                        justify-content: space-around;
-                        align-items: flex-end;
-                        flex-shrink: 0;
-                        width: 87.27vw;
-                        height: 47.46vw;
-                        box-sizing: border-box;
-                        padding: 0 6.67vw;
-
-                        .medal {
-                            position: absolute;
-                            top: 0;
-                            left: 5.6vw;
-                            width: 19.47vw;
-                            height: 25.87vw;
-                        }
-
-                        .textBox {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            margin-bottom: 6.4vw;
-                            font-size: 14px;
+                        p {
+                            color: $vip_Word;
+                            font-size: 12px;
                             font-weight: bold;
-                            @include vipCardText;
-
-                            p {
-                                margin-top: 2.4vw;
-                                font-size: 18px;
-                            }
                         }
                     }
                 }
@@ -265,53 +124,43 @@
         width: 100%;
         height: auto;
         box-sizing: border-box;
-        padding: 15px 12px 12px;
+        padding: 16px;
         margin: 10px 0;
-        background: $mainBG_1;
+        background: $mainBG_3;
 
         .title {
-            margin-bottom: 15px;
-            font-size: 17px;
+            color: $mainWord_1;
+            font-size: 4.3vw;
             font-weight: bold;
+            margin-bottom: 15px;
             letter-spacing: 2px;
-            color: $title_1;
-            box-sizing: border-box;
-            padding-left: 1vw;
         }
 
         ul {
             width: 100%;
             height: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
 
             li {
-                width: 45.4vw;
-                min-height: 51px;
+                width: 100%;
                 height: auto;
                 padding: 6px 12px;
-                margin: 0 1.6vw 1.6vw 0;
-                border: solid 1px $mainBorder_2;
+                margin-bottom: 10px;
+                background: $mainBG_2;
                 border-radius: 3px;
                 font-size: 13px;
                 font-weight: bold;
-                color: $title_2;
+                color: $mainWord_4;
                 box-sizing: border-box;
 
-                &:nth-of-type(2n) {
-                    margin-right: 0;
+                &:last-child {
+                    margin: 0;
                 }
 
                 p {
                     font-size: 22px;
-                    color: $mainWord_1;
+                    color: $money;
                     margin-top: 8px;
                 }
-            }
-
-            s {
-                width: 45.33vw;
             }
         }
     }
@@ -327,7 +176,7 @@
         .arrow_ic {
             display: block;
             width: 2vw;
-            height: 3.4vw;
+            height: 4vw;
             transform: scaleX(-1);
         }
     }
@@ -336,96 +185,87 @@
 //各層級詳情
 .vipDetail {
     width: 100%;
-    height: calc(100vh - 94px);
+    height: calc(100vh - 96px);
     overflow-y: auto;
-    padding: 5px 0;
+    padding: 16px;
+    box-sizing: border-box;
+    background: $mainBG_1;
 
     .lvWrap {
-        margin: 10px 0;
-        padding: 5px 18px;
         width: 100%;
         height: auto;
-        background: $mainBG_1;
-        box-sizing: border-box;
         position: relative;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
 
         .title {
             font-size: 17px;
             font-weight: bold;
-            color: $title_1;
-            margin: 7px 0 12px;
+            color: $mainWord_4;
+            margin: 0 0 20px;
         }
 
         .list {
             width: 100%;
             height: auto;
             display: flex;
-            box-shadow: 0 0 5px 0 $boxshadow_2;
             border-radius: 5px;
             overflow: hidden;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             position: relative;
-            border: solid 1px $mainBorder_2;
+            border: solid 1px $mainBorder_1;
+            background: $mainBG_2;
 
-            i {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 10px;
-                height: 40px;
-                position: absolute;
-                top: 0;
-                background: $mainBG_1;
-                z-index: 1;
+            // i {
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            //     width: 10px;
+            //     height: 40px;
+            //     position: absolute;
+            //     top: 0;
+            //     background: $mainBG_1;
+            //     z-index: 1;
 
-                &.prev {
-                    left: 19vw;
+            //     &.prev {
+            //         left: 19vw;
 
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 7px;
-                        height: 14px;
-                        z-index: 1;
-                    }
-                }
+            //         &::before {
+            //             content: "";
+            //             position: absolute;
+            //             width: 7px;
+            //             height: 14px;
+            //             z-index: 1;
+            //         }
+            //     }
 
-                &.next {
-                    right: 1vw;
+            //     &.next {
+            //         right: 1vw;
 
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 7px;
-                        height: 14px;
-                        z-index: 1;
-                        transform: scaleX(-1);
-                    }
-                }
-            }
+            //         &::before {
+            //             content: "";
+            //             position: absolute;
+            //             width: 7px;
+            //             height: 14px;
+            //             z-index: 1;
+            //             transform: scaleX(-1);
+            //         }
+            //     }
+            // }
 
             .left {
-                width: 20%;
+                width: 38%;
                 height: auto;
+                flex-shrink: 0;
 
                 li {
                     height: 40px;
                     display: flex;
                     align-items: center;
 
-                    &:nth-of-type(2n) {
-                        background: $vipDetail_SecondBG;
-                    }
-
                     &.smallTitle {
                         border-bottom: solid 1px $mainBorder_1;
 
                         p {
-                            color: $title_2;
+                            color: $mainWord_1;
                         }
                     }
 
@@ -468,16 +308,12 @@
                         height: 40px;
                         display: flex;
                         align-items: center;
-
-                        &:nth-of-type(2n) {
-                            background: $vipDetail_SecondBG;
-                        }
     
                         &.smallTitle {
                             border-bottom: solid 1px $mainBorder_1;
     
                             p {
-                                color: $title_2;
+                                color: $mainWord_1;
                             }
                         }
     
@@ -496,86 +332,102 @@
                 }
             }
 
-            .finger {
-                display: block;
-                width: 7vw;
-                height: 10vw;
-                position: absolute;
-                right: 4vw;
-                bottom: 2vw;
-                animation: disappear 4s ease 0s infinite;
+            // .finger {
+            //     display: block;
+            //     width: 7vw;
+            //     height: 10vw;
+            //     position: absolute;
+            //     right: 4vw;
+            //     bottom: 2vw;
+            //     animation: disappear 4s ease 0s infinite;
     
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: -10px;
-                    left: -20%;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-color: transparent $remind;
-                    border-width: 6px 8px 6px 0;
-                    animation: moveL 2s ease 0s infinite;
-                }
+            //     &::before {
+            //         content: "";
+            //         position: absolute;
+            //         top: -10px;
+            //         left: -20%;
+            //         width: 0;
+            //         height: 0;
+            //         border-style: solid;
+            //         border-color: transparent $remind;
+            //         border-width: 6px 8px 6px 0;
+            //         animation: moveL 2s ease 0s infinite;
+            //     }
     
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: -10px;
-                    right: 12%;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-color: transparent $remind;
-                    border-width: 6px 0 6px 8px;
-                    animation: moveR 2s ease 0s infinite;
-                }
-            }
+            //     &::after {
+            //         content: "";
+            //         position: absolute;
+            //         top: -10px;
+            //         right: 12%;
+            //         width: 0;
+            //         height: 0;
+            //         border-style: solid;
+            //         border-color: transparent $remind;
+            //         border-width: 6px 0 6px 8px;
+            //         animation: moveR 2s ease 0s infinite;
+            //     }
+            // }
     
-            @keyframes disappear {
-                0% {
-                    opacity: 0;
-                }
+            // @keyframes disappear {
+            //     0% {
+            //         opacity: 0;
+            //     }
     
-                25% {
-                    opacity: 1;
-                }
+            //     25% {
+            //         opacity: 1;
+            //     }
     
-                75% {
-                    opacity: 1;
-                }
+            //     75% {
+            //         opacity: 1;
+            //     }
     
-                100% {
-                    opacity: 0;
-                }
-            }
+            //     100% {
+            //         opacity: 0;
+            //     }
+            // }
+            // @keyframes moveL {
+            //     0% {
+            //         transform: translateX(0);
+            //     }
     
-            @keyframes moveL {
-                0% {
-                    transform: translateX(0);
-                }
+            //     50% {
+            //         transform: translateX(-140%);
+            //     }
     
-                50% {
-                    transform: translateX(-140%);
-                }
+            //     100% {
+            //         transform: translateX(0);
+            //     }
+            // }
+            // @keyframes moveR {
+            //     0% {
+            //         transform: translateX(0);
+            //     }
     
-                100% {
-                    transform: translateX(0);
-                }
-            }
+            //     50% {
+            //         transform: translateX(140%);
+            //     }
     
-            @keyframes moveR {
-                0% {
-                    transform: translateX(0);
-                }
-    
-                50% {
-                    transform: translateX(140%);
-                }
-    
-                100% {
-                    transform: translateX(0);
-                }
+            //     100% {
+            //         transform: translateX(0);
+            //     }
+            // }
+        }
+    }
+
+    .textBox {
+        width: 100%;
+        height: auto;
+
+        p {
+            color: $mainWord_3;
+            font-size: 3.4vw;
+            font-weight: bold;
+            line-height: 5vw;
+            margin-bottom: 10px;
+
+            &.title {
+                color: $mainWord_1;
+                font-size: 4vw;
             }
         }
     }
