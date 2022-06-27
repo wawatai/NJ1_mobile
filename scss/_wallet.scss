@@ -1,12 +1,6 @@
 //我的錢包
 .walletWrap {
-    width: 100%;
-    min-height: calc(100vh - 96px);
-    height: auto;
-    background: $mainBG_1;
-    padding-bottom: 10px;
-    box-sizing: border-box;
-    overflow-y: auto;
+    @include bgStyle_1;
 
     //上半
     .walletBox {
@@ -16,76 +10,63 @@
         background: $mainBG_3;
         padding: 25px 0 25px;
 
-        //漸層
-        .gradient {
-            width: 100%;
+        //上視窗
+        .content {
+            width: 92vw;
             height: auto;
+            margin: 0 auto 25px;
+            background: $mainBG_1;
+            border: solid 1px $mainBorder_1;
+            border-radius: 5px;
 
-            .content {
-                width: 92vw;
+            //總額顯示
+            .amount {
+                width: 100%;
                 height: auto;
-                margin: 0 auto 25px;
-                background: $mainBG_1;
-                border: solid 1px $mainBorder_1;
-                border-radius: 5px;
+                display: flex;
+                border-bottom: solid 1px $mainBorder_1;
 
-                .amount {
-                    width: 100%;
+                .half {
+                    width: 50%;
                     height: auto;
-                    display: flex;
-                    border-bottom: solid 1px $mainBorder_1;
+                    box-sizing: border-box;
+                    padding: 12px 0 12px 22px;
 
-                    .half {
-                        width: 50%;
-                        height: auto;
-                        box-sizing: border-box;
-                        padding: 12px 0 12px 22px;
+                    .title {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 16px;
+                        color: $mainWord_1;
+                        font-size: 3.7vw;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                    }
 
-                        .title {
-                            display: flex;
-                            align-items: center;
-                            margin-bottom: 14px;
-                            color: $mainWord_1;
-                            font-size: 3.7vw;
-                            font-weight: bold;
-                            letter-spacing: 1px;
-                        }
-
-                        .money {
-                            color: $money;
-                            font-size: 6.5vw;
-                            font-weight: bold;
-                            display: flex;
-                            align-items: center;
-                            height: 33px;
-                            width: 100%;
-                        }
+                    .money {
+                        color: $money;
+                        font-size: 6.5vw;
+                        font-weight: bold;
                     }
                 }
+            }
 
-                .details {
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    
-                    .items {
-                        display: flex;
-                        width: 100%;
-                        align-items: center;
-                        box-sizing: border-box;
-                        padding: 0 15px;
-                        height: 10.67vw;
+            //限制
+            .details {
+                width: 100%;
+                height: 10.67vw;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+                box-sizing: border-box;
+                
+                p {
+                    color: $mainWord_2;
+                    font-size: 3.4vw;
+                    font-weight: bold;
 
-                        p {
-                            color: $mainWord_2;
-                            font-size: 3.4vw;
-                            font-weight: bold;
-
-                            &:nth-of-type(2) {
-                                margin-left: 20px;
-                                color: $money_Sp;
-                            }
-                        }
+                    &:nth-of-type(2) {
+                        margin-left: 20px;
+                        color: $money_Sp;
                     }
                 }
             }
@@ -115,173 +96,32 @@
                     color: $mainWord_1;
                     font-size: 2vw;
                     font-weight: bold;
-                    padding-top: 8px;
+                    padding-top: 2vw;
                 }
             }
         }
     }
-
-    //按鈕列
-    // .btnBox {
-    //     width: 100%;
-    //     height: auto;
-    //     box-sizing: border-box;
-    //     display: flex;
-    //     justify-content: center;
-    //     padding: 0 5px 10px;
-
-    //     button {
-    //         width: 46.4vw;
-    //         height: 10.67vw;
-    //         @include buttonStyle_6;
-
-    //         &:nth-of-type(1) {
-    //             border-radius: 1.5vw 0 0 1.5vw;
-    //         }
-    //         &:last-child {
-    //             border-radius: 0 1.5vw 1.5vw 0;
-    //         }
-    //     }
-    // }
 
     //錢包列
     .walletList {
         width: 100%;
         height: auto;
         background: $mainBG_3;
-        margin-bottom: 17px;
-
-        // .forActive,
-        // .forHistory {
-        //     padding-bottom: 15px;
-        //     display: none;
-
-        //     &.display {
-        //         display: block;
-        //     }
-
-        //     .title {
-        //         display: flex;
-        //         align-items: center;
-        //         justify-content: space-between;
-        //         width: 100%;
-        //         height: auto;
-        //         box-sizing: border-box;
-        //         padding: 8px 15px 0;
-        //         margin-bottom: 11px;
-        //         font-size: 13px;
-        //         letter-spacing: 1px;
-        //         color: $font-color_4;
-        //         font-weight: bold;
-
-        //         .refresh_ic {
-        //             display: block;
-        //             width: 18px;
-        //             height: 18px;
-        //         }
-        //     }
-
-        //     .pointBox {
-        //         width: 92.27vw;
-        //         height: auto;
-        //         padding-bottom: 30px;
-        //         margin: 0 auto 14px;
-        //         background: $backgroundColor_2;
-        //         box-shadow: 0 0 5px 0 $boxshadow_2;
-
-        //         .smallTitle {
-        //             display: flex;
-        //             align-items: center;
-        //             box-sizing: border-box;
-        //             height: 40px;
-        //             border-bottom: solid 1px $borderColor_3;
-        //             font-size: 14px;
-        //             font-weight: bold;
-        //             color: $font-color_12;
-        //             padding: 0 17px;
-        //         }
-
-        //         .barBox {
-        //             width: 88vw;
-        //             height: auto;
-        //             box-sizing: border-box;
-        //             padding: 10px 20px 15px;
-        //             background: $backgroundColor_8;
-        //             border-radius: 3px;
-        //             margin: 10px auto 0;
-        //             display: flex;
-        //             flex-direction: column;
-
-        //             .not {
-        //                 font-size: 12px;
-        //                 font-weight: bold;
-        //                 letter-spacing: 1px;
-        //                 color: $font-color_2;
-        //             }
-        //         }
-
-        //         ul {
-        //             width: 100%;
-        //             height: auto;
-
-        //             li {
-        //                 width: 100%;
-        //                 height: auto;
-        //                 box-sizing: border-box;
-        //                 padding: 12px 0 0 16px;
-        //                 display: flex;
-                        
-        //                 p {
-        //                     font-size: 13px;
-        //                     letter-spacing: 1px;
-        //                     color: $font-color_8;
-        //                     font-weight: bold;
-
-        //                     &:nth-of-type(1) {
-        //                         margin-right: 20px;
-        //                     }
-        //                 }
-        //             }
-        //         }
-
-        //         .pointBtnBox {
-        //             display: flex;
-        //             justify-content: space-between;
-        //             box-sizing: border-box;
-        //             width: 100%;
-        //             height: auto;
-        //             padding: 20px 14px 10px;
-
-        //             button {
-        //                 width: 41.33vw;
-        //                 height: 8.27vw;
-        //                 @include buttonStyle_2;
-        //                 font-size: 13px;
-                        
-        //                 &.check {
-        //                     @include buttonStyle_3;
-        //                     font-size: 13px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+        margin-bottom: 16px;
 
         .forPlatform {
+            width: 100%;
+            height: auto;
             padding: 16px;
-            display: none;
-
-            &.display {
-                display: block;
-            }
+            box-sizing: border-box;
 
             .title {
+                width: 100%;
+                height: auto;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                width: 100%;
-                height: auto;
-                margin-bottom: 10px;
+                margin-bottom: 12px;
 
                 div {
 
@@ -301,7 +141,7 @@
                     width: auto;
                     height: 20px;
                     @include secondBtn;
-                    font-size: 12px;
+                    font-size: 2vw;
                 }
             }
 
@@ -320,63 +160,25 @@
 
                 li {
                     width: auto;
-                    height: 60px;
+                    height: auto;
                     box-sizing: border-box;
                     padding: 10px;
                     border-radius: 5px;
                     background: $mainBG_2;
                     overflow: hidden;
-                    transition: 0.3s all;
 
                     div {
-                        letter-spacing: 1px;
+                        width: 100%;
                         color: $mainWord_1;
                         font-size: 12px;
                         font-weight: bold;
-                        width: 100%;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        // display: flex;
-                        // align-items: center;
-
-                        // .smallInfo {
-                        //     display: block;
-                        //     width: 18px;
-                        //     height: 18px;
-                        //     margin-left: 5px;
-                        //     position: relative;
-                        //     opacity: 0;
-                        //     pointer-events: none;
-
-                        //     &.display {
-                        //         opacity: 1;
-                        //         pointer-events: visible;
-                        //     }
-
-                        //     &:hover,&:active,&.active {
-
-                        //         .inner {
-                        //             display: block;
-                        //         }
-                        //     }
-
-                        //     .inner {
-                        //         display: none;
-                        //         width: auto;
-                        //         height: auto;
-                        //         @include smallTip;
-                        //         position: absolute;
-                        //         left: 50%;
-                        //         transform: translateX(-50%);
-                        //         bottom: -30px;
-                        //     }
-                        // }
+                        letter-spacing: 1px;
+                        @include hiddenText;
                     }
 
                     p {
                         margin-top: 8px;
-                        font-size: 17px;
+                        font-size: 4.5vw;
                         color: $money;
                         font-weight: bold;
                     }
@@ -385,16 +187,16 @@
 
             .openBtn {
                 width: 100%;
+                height: auto;
                 display: flex;
                 justify-content: center;
-                height: auto;
                 margin-top: 16px;
 
                 div {
-                    font-size: 13px;
-                    letter-spacing: 1px;
-                    font-weight: bold;
                     color: $money;
+                    font-size: 3.4vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
                     display: flex;
                     align-items: center;
 
@@ -421,25 +223,14 @@
     .options {
         width: 92vw;
         height: 50px;
-        margin: 0 auto 17px;
         @include longBtn;
-
-        // &:active,&.active {
-
-        //     .betting_ic,.deal_ic {
-        //         background-position-y: calc(100% - 1px);
-        //     }
-
-        //     .arrow_ic {
-        //         background-position-y: 100%;
-        //     }
-        // }
+        margin: 0 auto 17px;
 
         .betting_ic,.deal_ic {
             display: block;
-            width: 6vw;
-            height: 7.6vw;
-            margin-right: 4vw;
+            width: 24px;
+            height: 30px;
+            margin-right: 20px;
         }
         .deal_ic {
             background-position-x: 100%;
@@ -447,8 +238,8 @@
 
         .arrow_ic {
             display: block;
-            width: 2vw;
-            height: 3.4vw;
+            width: 10px;
+            height: 20px;
             transform: scaleX(-1);
         }
     }

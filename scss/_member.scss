@@ -1,10 +1,6 @@
 //會員中心
 .memberWrap {
-    width: 100%;
-    height: auto;
-    min-height: calc(100% - 92px);
-    background: $mainBG_1;
-    overflow-y: auto;
+    @include bgStyle_1;
 
     //玩家資訊
     .user {
@@ -13,7 +9,7 @@
         background: $mainBG_3;
         padding: 0 15px 20px;
         box-sizing: border-box;
-        margin-bottom: 17px;
+        margin-bottom: 16px;
 
         .info {
             display: flex;
@@ -30,10 +26,10 @@
                     display: flex;
                     align-items: center;
                     margin-bottom: 6px;
-                    font-size: 16px;
-                    letter-spacing: 2px;
                     color: $mainWord_1;
+                    font-size: 4vw;
                     font-weight: bold;
+                    letter-spacing: 2px;
 
                     .lv {
                         width: auto;
@@ -45,25 +41,18 @@
                 }
 
                 .date {
-                    font-size: 13px;
-                    letter-spacing: 1px;
-                    font-weight: bold;
                     color: $mainWord_4;
+                    font-size: 2vw;
+                    font-weight: bold;
+                    letter-spacing: 1px;
                 }
             }
-
-            // .arrow_ic {
-            //     display: block;
-            //     width: 1.7vw;
-            //     height: 3.2vw;
-            //     transform: scaleX(-1);
-            // }
 
             .infoBtn {
                 width: auto;
                 height: auto;
                 @include secondBtn;
-                font-size: 14px;
+                font-size: 3.4vw;
                 padding: 3px 25px;
             }
         }
@@ -84,13 +73,13 @@
                 height: 8.27vw;
                 @include mainBtn;
                 border-radius: 0 5vw 5vw 0;
-                font-size: 15px;
+                font-size: 3.4vw;
             }
         }
 
         .btnBox {
             display: flex;
-            width: 92.26vw;
+            width: 92.27vw;
             height: auto;
             margin: 0 auto;
             justify-content: space-between;
@@ -160,7 +149,7 @@
                 }
 
                 p {
-                    font-size: 13px;
+                    font-size: 3.4vw;
                     font-weight: bold;
                     margin-top: 10px;
                     color: $mainWord_1;
@@ -282,12 +271,9 @@
 
 //會員中心內頁基本情報
 .memberInfo {
-    overflow-y: auto;
-    width: 100%;
+    @include bgStyle_1;
     height: calc(100vh - 136px);
     padding: 15px 0;
-    box-sizing: border-box;
-    background: $mainBG_1;
 
     form {
         width: 100%;
@@ -329,7 +315,7 @@
                 span {
                     width: 20vw;
                     font-weight: bold;
-                    font-size: 14px;
+                    font-size: 3.4vw;
                     color: $mainWord_2;
                     flex-shrink: 0;
                 }
@@ -359,6 +345,7 @@
                         position: absolute;
                         width: 18px;
                         height: 18px;
+                        pointer-events: none;
                     }
 
                     &.nope {
@@ -427,7 +414,7 @@
 
                 span {
                     width: 100%;
-                    font-size: 14px;
+                    font-size: 3.4vw;
                     font-weight: bold;
                     color: $mainWord_1;
                     display: flex;
@@ -446,11 +433,12 @@
                     }
 
                     &:nth-of-type(1) {
-                        width: 24vw;
+                        width: 30%;
                         flex-shrink: 0;
                     }
 
                     input {
+                        width: 100%;
                         @include memberInput;
                         background: none;
                         padding: 0;
@@ -503,6 +491,7 @@
                         position: absolute;
                         width: 18px;
                         height: 18px;
+                        pointer-events: none;
                     }
 
                     &:active,&.active {

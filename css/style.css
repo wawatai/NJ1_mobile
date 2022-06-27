@@ -59,8 +59,13 @@ footer i {
   background-size: 100%;
 }
 
-.jumpWindow.bettingDetail .pageBox .arrowBox i {
-  background: url("../images/icon/svg/unfold.svg") no-repeat center;
+.jumpWindow .date_ic {
+  background: url("../images/icon/date_ic.png") no-repeat;
+  background-size: contain;
+}
+
+.jumpWindow .line_ic {
+  background: url("../images/icon/line_ic.png") no-repeat;
   background-size: contain;
 }
 
@@ -245,67 +250,6 @@ footer i {
   background-size: contain;
 }
 
-.helpWrap .selectBox .arrow_ic,
-.helpInner .title .arrow_ic {
-  background: url("../images/icon/svg/arrow_w.svg") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .title .about {
-  background: url("../images/icon/svg/about.svg") no-repeat center;
-  background-size: contain;
-}
-
-.helpInner .title .new {
-  background: url("../images/icon/svg/lamp.svg") no-repeat center;
-  background-size: contain;
-}
-
-.helpInner .title .often {
-  background: url("../images/icon/svg/problem2.svg") no-repeat center;
-  background-size: contain;
-}
-
-.helpInner .img.depositWay {
-  background: url("../images/說明圖/withdraw.png") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .img.deposit_water {
-  background: url("../images/說明圖/online01.png") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .img.withdrawalWay {
-  background: url("../images/說明圖/withdraw.png") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .img.transferWay {
-  background: url("../images/說明圖/transfer.png") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .img.tv {
-  background: url("../images/說明圖/tv.png") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .img.remote {
-  background: url("../images/說明圖/remote.png") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .img.license {
-  background: url("../images/說明圖/license.jpg") no-repeat;
-  background-size: 100%;
-}
-
-.helpInner .btnBox .online_ic {
-  background: url("../images/icon/svg/service3.svg") no-repeat center;
-  background-size: contain;
-}
-
 .helpInner .btnBox .line_ic {
   background: url("../images/icon/svg/line.svg") no-repeat center;
   background-size: contain;
@@ -409,12 +353,10 @@ footer i {
 
 header .logo {
   height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-.single-item {
-  width: 100%;
-  height: 45vw;
-}
 .single-item img {
   width: 100%;
   height: 100%;
@@ -465,13 +407,6 @@ header .logo {
      object-fit: contain;
 }
 
-.appWrap img {
-  width: 100%;
-  height: 96px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .eventWindow img {
   width: 100%;
   height: auto;
@@ -487,6 +422,13 @@ header .logo {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.helpInner img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 20px 0;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -606,29 +548,28 @@ html body .bg {
   background: linear-gradient(to top, #101010 0%, #2b2b2b 100%);
 }
 html body header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
   width: 100%;
   height: auto;
   background: #181818;
   border-bottom: solid 1px #ff4719;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 html body header .content {
+  width: 100%;
+  height: 45px;
+  padding: 0 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 45px;
-  padding: 0 14px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   position: relative;
-  overflow: hidden;
 }
 html body header .content .logo {
   margin: 0 auto;
@@ -637,14 +578,14 @@ html body header .content .title {
   width: 70%;
   height: auto;
   text-align: center;
-  font-size: 20px;
-  letter-spacing: 2px;
   color: #ffc13c;
+  font-size: 5.2vw;
   font-weight: bold;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  letter-spacing: 2px;
   margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 html body header .content .back_arrow {
   position: absolute;
@@ -657,7 +598,8 @@ html body header .content .back_arrow {
   left: 14px;
 }
 html body header .content .refresh_ic,
-html body header .content .link_ic {
+html body header .content .link_ic,
+html body header .content .editBtn {
   width: 21px;
   height: 21px;
   position: absolute;
@@ -665,6 +607,16 @@ html body header .content .link_ic {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+html body header .content .refresh_ic.editBtn,
+html body header .content .link_ic.editBtn,
+html body header .content .editBtn.editBtn {
+  display: none;
+}
+html body header .content .refresh_ic.editBtn.display,
+html body header .content .link_ic.editBtn.display,
+html body header .content .editBtn.editBtn.display {
+  display: block;
 }
 html body header .content .detailBtn {
   width: auto;
@@ -681,6 +633,7 @@ html body header .content .detailBtn {
   font-weight: bold;
   padding: 0 5px;
   padding-bottom: 2px;
+  font-size: 3vw;
 }
 html body header .content .detailBtn:active, html body header .content .detailBtn.active {
   background: #ff4719;
@@ -690,19 +643,6 @@ html body header .content .detailBtn.edit {
   display: none;
 }
 html body header .content .detailBtn.edit.display {
-  display: block;
-}
-html body header .content .editBtn {
-  width: 21px;
-  height: 21px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 14px;
-  display: none;
-}
-html body header .content .editBtn.display {
   display: block;
 }
 html body header .content.helpPage {
@@ -724,6 +664,8 @@ html body .ad {
           justify-content: center;
 }
 html body .ad .single-item {
+  width: 100%;
+  height: 45vw;
   margin: 0;
 }
 html body .ad .single-item .slick-list {
@@ -1437,7 +1379,7 @@ html body .filter .jumpWindow.loginWindow form .forget {
 html body .filter .jumpWindow.loginWindow form .forget p {
   font-size: 2vw;
   font-weight: bold;
-  color: #10d718;
+  color: #fb770a;
 }
 html body .filter .jumpWindow.loginWindow form .realLogin {
   width: 100%;
@@ -1467,7 +1409,7 @@ html body .filter .jumpWindow.loginWindow form .registerBox p {
   text-align: center;
 }
 html body .filter .jumpWindow.loginWindow form .registerBox p.signupBtn {
-  color: #10d718;
+  color: #fb770a;
   margin-top: 4vw;
 }
 html body .filter .jumpWindow.forgetWindow {
@@ -1557,6 +1499,8 @@ html body .filter .jumpWindow.registerWindow .title .icon {
 html body .filter .jumpWindow.registerWindow form {
   width: 100%;
   height: auto;
+  max-height: 70vh;
+  overflow-y: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -1575,7 +1519,26 @@ html body .filter .jumpWindow.registerWindow form label {
   width: 100%;
   height: auto;
   position: relative;
-  margin-bottom: 6vw;
+  margin-bottom: 9vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 20px;
+}
+html body .filter .jumpWindow.registerWindow form label:nth-last-of-type(1), html body .filter .jumpWindow.registerWindow form label:nth-last-of-type(2) {
+  margin-bottom: 4vw;
+}
+html body .filter .jumpWindow.registerWindow form label em {
+  position: absolute;
+  left: 0;
+  color: #e11515;
+  font-size: 14px;
+  font-weight: bold;
 }
 html body .filter .jumpWindow.registerWindow form label input {
   width: 100%;
@@ -1605,6 +1568,19 @@ html body .filter .jumpWindow.registerWindow form label input::-ms-input-placeho
 html body .filter .jumpWindow.registerWindow form label input::placeholder {
   color: #ffffff;
 }
+html body .filter .jumpWindow.registerWindow form label input.line {
+  padding-left: 12vw;
+}
+html body .filter .jumpWindow.registerWindow form label .remind {
+  position: absolute;
+  left: 20px;
+  top: 9.87vw;
+  width: 95%;
+  color: #e11515;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 15px;
+}
 html body .filter .jumpWindow.registerWindow form label.isCheck {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1619,22 +1595,31 @@ html body .filter .jumpWindow.registerWindow form label.isCheck input[type=check
   margin-right: 10px;
 }
 html body .filter .jumpWindow.registerWindow form label.isCheck p {
-  color: #fb770a;
+  color: #ffc13c;
   font-size: 3.4vw;
   font-weight: bold;
 }
 html body .filter .jumpWindow.registerWindow form label.isCheck p.ruleBtn {
-  color: #10d718;
+  color: #fb770a;
   margin-top: 2vw;
 }
 html body .filter .jumpWindow.registerWindow form label .eye {
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   right: 10px;
   width: 6.13vw;
   height: 4.26vw;
+}
+html body .filter .jumpWindow.registerWindow form label .date_ic {
+  position: absolute;
+  right: 15px;
+  width: 4vw;
+  height: 4vw;
+}
+html body .filter .jumpWindow.registerWindow form label .line_ic {
+  position: absolute;
+  width: 8vw;
+  height: 8vw;
+  left: 6vw;
 }
 html body .filter .jumpWindow.registerWindow form .checkBtn {
   width: 100%;
@@ -1648,6 +1633,8 @@ html body .filter .jumpWindow.registerWindow form .checkBtn {
   font-weight: bold;
   letter-spacing: 1px;
   padding-bottom: 2px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 html body .filter .jumpWindow.registerWindow form .checkBtn:active, html body .filter .jumpWindow.registerWindow form .checkBtn.active {
   background: #b9001b;
@@ -1686,7 +1673,7 @@ html body .filter .jumpWindow.ruleWindow .content .ruleBody div p {
   letter-spacing: 1px;
 }
 html body .filter .jumpWindow.ruleWindow .content .ruleBody div p a {
-  color: #10d718;
+  color: #fb770a;
 }
 html body .filter .jumpWindow.ruleWindow button {
   display: block;
@@ -2438,11 +2425,12 @@ html body .filter .accWindow .content .bigBox, html body .filter .platWindow .co
 html body .filter .accWindow .content .bigBox button, html body .filter .platWindow .content .bigBox button {
   width: 100%;
   height: 38px;
-  background: -webkit-gradient(linear, left bottom, left top, from(#d7d7d7), color-stop(58%, #ffffff), to(#ffffff));
-  background: linear-gradient(to top, #d7d7d7 0%, #ffffff 58%, #ffffff 100%);
-  font-size: 4vw;
-  color: #848484;
-  border: solid 1px #957222;
+  background: #101010;
+  border-radius: 3px;
+  border: solid 1px #a88335;
+  color: #ffc13c;
+  font-size: 13px;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2452,15 +2440,12 @@ html body .filter .accWindow .content .bigBox button, html body .filter .platWin
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-weight: bold;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   border-radius: 3px;
 }
 html body .filter .accWindow .content .bigBox button:active, html body .filter .accWindow .content .bigBox button.active, html body .filter .platWindow .content .bigBox button:active, html body .filter .platWindow .content .bigBox button.active {
-  background: -webkit-gradient(linear, left bottom, left top, from(#dfc88b), to(#b79451));
-  background: linear-gradient(to top, #dfc88b 0%, #b79451 100%);
-  color: #ffffff;
+  background: #ffc13c;
+  border-color: #ffc13c;
+  color: #101010;
 }
 html body .filter .accWindow .content .smallBox, html body .filter .platWindow .content .smallBox {
   width: 100%;
@@ -2477,11 +2462,12 @@ html body .filter .accWindow .content .smallBox button, html body .filter .platW
   width: 32%;
   height: 38px;
   margin: 0 2% 2% 0;
-  background: -webkit-gradient(linear, left bottom, left top, from(#d7d7d7), color-stop(58%, #ffffff), to(#ffffff));
-  background: linear-gradient(to top, #d7d7d7 0%, #ffffff 58%, #ffffff 100%);
-  font-size: 4vw;
-  color: #848484;
-  border: solid 1px #957222;
+  background: #101010;
+  border-radius: 3px;
+  border: solid 1px #a88335;
+  color: #ffc13c;
+  font-size: 13px;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2491,15 +2477,12 @@ html body .filter .accWindow .content .smallBox button, html body .filter .platW
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-weight: bold;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   border-radius: 3px;
 }
 html body .filter .accWindow .content .smallBox button:active, html body .filter .accWindow .content .smallBox button.active, html body .filter .platWindow .content .smallBox button:active, html body .filter .platWindow .content .smallBox button.active {
-  background: -webkit-gradient(linear, left bottom, left top, from(#dfc88b), to(#b79451));
-  background: linear-gradient(to top, #dfc88b 0%, #b79451 100%);
-  color: #ffffff;
+  background: #ffc13c;
+  border-color: #ffc13c;
+  color: #101010;
 }
 html body .filter .accWindow .content .smallBox button:nth-of-type(3n), html body .filter .platWindow .content .smallBox button:nth-of-type(3n) {
   margin-right: 0;
@@ -2989,12 +2972,11 @@ html body .eventDetail .detailContent .contentFooter {
 }
 html body .walletWrap {
   width: 100%;
-  min-height: calc(100vh - 96px);
-  height: auto;
+  height: calc(100vh - 96px);
   background: #101010;
-  padding-bottom: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding-bottom: 10px;
   overflow-y: auto;
 }
 html body .walletWrap .walletBox {
@@ -3004,11 +2986,7 @@ html body .walletWrap .walletBox {
   background: #1b1b1b;
   padding: 25px 0 25px;
 }
-html body .walletWrap .walletBox .gradient {
-  width: 100%;
-  height: auto;
-}
-html body .walletWrap .walletBox .gradient .content {
+html body .walletWrap .walletBox .content {
   width: 92vw;
   height: auto;
   margin: 0 auto 25px;
@@ -3016,7 +2994,7 @@ html body .walletWrap .walletBox .gradient .content {
   border: solid 1px #ffc13c;
   border-radius: 5px;
 }
-html body .walletWrap .walletBox .gradient .content .amount {
+html body .walletWrap .walletBox .content .amount {
   width: 100%;
   height: auto;
   display: -webkit-box;
@@ -3024,65 +3002,50 @@ html body .walletWrap .walletBox .gradient .content .amount {
   display: flex;
   border-bottom: solid 1px #ffc13c;
 }
-html body .walletWrap .walletBox .gradient .content .amount .half {
+html body .walletWrap .walletBox .content .amount .half {
   width: 50%;
   height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 12px 0 12px 22px;
 }
-html body .walletWrap .walletBox .gradient .content .amount .half .title {
+html body .walletWrap .walletBox .content .amount .half .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   color: #ffc13c;
   font-size: 3.7vw;
   font-weight: bold;
   letter-spacing: 1px;
 }
-html body .walletWrap .walletBox .gradient .content .amount .half .money {
+html body .walletWrap .walletBox .content .amount .half .money {
   color: #ffffff;
   font-size: 6.5vw;
   font-weight: bold;
+}
+html body .walletWrap .walletBox .content .details {
+  width: 100%;
+  height: 10.67vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 33px;
-  width: 100%;
-}
-html body .walletWrap .walletBox .gradient .content .details {
-  width: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-html body .walletWrap .walletBox .gradient .content .details .items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 0 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0 15px;
-  height: 10.67vw;
 }
-html body .walletWrap .walletBox .gradient .content .details .items p {
+html body .walletWrap .walletBox .content .details p {
   color: #fb770a;
   font-size: 3.4vw;
   font-weight: bold;
 }
-html body .walletWrap .walletBox .gradient .content .details .items p:nth-of-type(2) {
+html body .walletWrap .walletBox .content .details p:nth-of-type(2) {
   margin-left: 20px;
   color: #e11515;
 }
@@ -3120,22 +3083,24 @@ html body .walletWrap .walletBox ul li p {
   color: #ffc13c;
   font-size: 2vw;
   font-weight: bold;
-  padding-top: 8px;
+  padding-top: 2vw;
 }
 html body .walletWrap .walletList {
   width: 100%;
   height: auto;
   background: #1b1b1b;
-  margin-bottom: 17px;
+  margin-bottom: 16px;
 }
 html body .walletWrap .walletList .forPlatform {
+  width: 100%;
+  height: auto;
   padding: 16px;
-  display: none;
-}
-html body .walletWrap .walletList .forPlatform.display {
-  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 html body .walletWrap .walletList .forPlatform .title {
+  width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3145,9 +3110,7 @@ html body .walletWrap .walletList .forPlatform .title {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 html body .walletWrap .walletList .forPlatform .title div p {
   color: #cd8c2f;
@@ -3168,7 +3131,7 @@ html body .walletWrap .walletList .forPlatform .title button {
   font-weight: bold;
   padding: 0 5px;
   padding-bottom: 2px;
-  font-size: 12px;
+  font-size: 2vw;
 }
 html body .walletWrap .walletList .forPlatform .title button:active, html body .walletWrap .walletList .forPlatform .title button.active {
   background: #ff4719;
@@ -3191,48 +3154,46 @@ html body .walletWrap .walletList .forPlatform ul.active {
 }
 html body .walletWrap .walletList .forPlatform ul li {
   width: auto;
-  height: 60px;
+  height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 10px;
   border-radius: 5px;
   background: #252525;
   overflow: hidden;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
 }
 html body .walletWrap .walletList .forPlatform ul li div {
-  letter-spacing: 1px;
+  width: 100%;
   color: #ffc13c;
   font-size: 12px;
   font-weight: bold;
-  width: 100%;
+  letter-spacing: 1px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 html body .walletWrap .walletList .forPlatform ul li p {
   margin-top: 8px;
-  font-size: 17px;
+  font-size: 4.5vw;
   color: #ffffff;
   font-weight: bold;
 }
 html body .walletWrap .walletList .forPlatform .openBtn {
   width: 100%;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: auto;
   margin-top: 16px;
 }
 html body .walletWrap .walletList .forPlatform .openBtn div {
-  font-size: 13px;
-  letter-spacing: 1px;
-  font-weight: bold;
   color: #ffffff;
+  font-size: 3.4vw;
+  font-weight: bold;
+  letter-spacing: 1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3255,7 +3216,6 @@ html body .walletWrap .walletList .forPlatform .openBtn div .db_arrow {
 html body .walletWrap .options {
   width: 92vw;
   height: 50px;
-  margin: 0 auto 17px;
   background: #252525;
   border-radius: 5px;
   display: -webkit-box;
@@ -3270,6 +3230,7 @@ html body .walletWrap .options {
   padding: 0 24px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0 auto 17px;
 }
 html body .walletWrap .options p {
   display: -webkit-box;
@@ -3284,25 +3245,27 @@ html body .walletWrap .options p {
 }
 html body .walletWrap .options .betting_ic, html body .walletWrap .options .deal_ic {
   display: block;
-  width: 6vw;
-  height: 7.6vw;
-  margin-right: 4vw;
+  width: 24px;
+  height: 30px;
+  margin-right: 20px;
 }
 html body .walletWrap .options .deal_ic {
   background-position-x: 100%;
 }
 html body .walletWrap .options .arrow_ic {
   display: block;
-  width: 2vw;
-  height: 3.4vw;
+  width: 10px;
+  height: 20px;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 html body .memberWrap {
   width: 100%;
-  height: auto;
-  min-height: calc(100% - 92px);
+  height: calc(100vh - 96px);
   background: #101010;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 10px;
   overflow-y: auto;
 }
 html body .memberWrap .user {
@@ -3312,7 +3275,7 @@ html body .memberWrap .user {
   padding: 0 15px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin-bottom: 17px;
+  margin-bottom: 16px;
 }
 html body .memberWrap .user .info {
   display: -webkit-box;
@@ -3337,10 +3300,10 @@ html body .memberWrap .user .info div .account {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 6px;
-  font-size: 16px;
-  letter-spacing: 2px;
   color: #ffc13c;
+  font-size: 4vw;
   font-weight: bold;
+  letter-spacing: 2px;
 }
 html body .memberWrap .user .info div .account .lv {
   width: auto;
@@ -3362,10 +3325,10 @@ html body .memberWrap .user .info div .account .lv {
   font-size: 3.4vw;
 }
 html body .memberWrap .user .info div .date {
-  font-size: 13px;
-  letter-spacing: 1px;
-  font-weight: bold;
   color: #cd8c2f;
+  font-size: 2vw;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 html body .memberWrap .user .info .infoBtn {
   width: auto;
@@ -3377,7 +3340,7 @@ html body .memberWrap .user .info .infoBtn {
   font-weight: bold;
   padding: 0 5px;
   padding-bottom: 2px;
-  font-size: 14px;
+  font-size: 3.4vw;
   padding: 3px 25px;
 }
 html body .memberWrap .user .info .infoBtn:active, html body .memberWrap .user .info .infoBtn.active {
@@ -3425,7 +3388,7 @@ html body .memberWrap .user .wallet button {
   letter-spacing: 1px;
   padding-bottom: 2px;
   border-radius: 0 5vw 5vw 0;
-  font-size: 15px;
+  font-size: 3.4vw;
 }
 html body .memberWrap .user .wallet button:active, html body .memberWrap .user .wallet button.active {
   background: #b9001b;
@@ -3434,7 +3397,7 @@ html body .memberWrap .user .btnBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 92.26vw;
+  width: 92.27vw;
   height: auto;
   margin: 0 auto;
   -webkit-box-pack: justify;
@@ -3529,7 +3492,7 @@ html body .memberWrap .user ul li i.card_ic {
   background-position-x: -33vw;
 }
 html body .memberWrap .user ul li p {
-  font-size: 13px;
+  font-size: 3.4vw;
   font-weight: bold;
   margin-top: 10px;
   color: #ffc13c;
@@ -3669,13 +3632,15 @@ html body .memberList ul li:active, html body .memberList ul li.active {
   background: #181818;
 }
 html body .memberInfo {
-  overflow-y: auto;
   width: 100%;
-  height: calc(100vh - 136px);
-  padding: 15px 0;
+  height: calc(100vh - 96px);
+  background: #101010;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #101010;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  height: calc(100vh - 136px);
+  padding: 15px 0;
 }
 html body .memberInfo form {
   width: 100%;
@@ -3722,7 +3687,7 @@ html body .memberInfo form ul li em::before {
 html body .memberInfo form ul li span {
   width: 20vw;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 3.4vw;
   color: #fb770a;
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -3801,6 +3766,7 @@ html body .memberInfo form ul li button::before {
   position: absolute;
   width: 18px;
   height: 18px;
+  pointer-events: none;
 }
 html body .memberInfo form ul li button.nope::before {
   width: 12px;
@@ -3857,7 +3823,7 @@ html body .memberInfo .info_1 ul li.forQR, html body .memberInfo .info_2 ul li.f
 }
 html body .memberInfo .info_1 ul li span, html body .memberInfo .info_2 ul li span {
   width: 100%;
-  font-size: 14px;
+  font-size: 3.4vw;
   font-weight: bold;
   color: #ffc13c;
   display: -webkit-box;
@@ -3883,11 +3849,12 @@ html body .memberInfo .info_1 ul li span.empty, html body .memberInfo .info_2 ul
       flex-shrink: 0;
 }
 html body .memberInfo .info_1 ul li span:nth-of-type(1), html body .memberInfo .info_2 ul li span:nth-of-type(1) {
-  width: 24vw;
+  width: 30%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 html body .memberInfo .info_1 ul li span input, html body .memberInfo .info_2 ul li span input {
+  width: 100%;
   border: solid 1px transparent;
   background: #272727;
   font-size: 14px;
@@ -4002,6 +3969,7 @@ html body .memberInfo .info_1 ul li .changePwdBtn::before, html body .memberInfo
   position: absolute;
   width: 18px;
   height: 18px;
+  pointer-events: none;
 }
 html body .memberInfo .info_1 ul li .changePwdBtn:active::before, html body .memberInfo .info_1 ul li .changePwdBtn.active::before, html body .memberInfo .info_2 ul li .changePwdBtn:active::before, html body .memberInfo .info_2 ul li .changePwdBtn.active::before {
   top: -30px;
@@ -4163,10 +4131,14 @@ html body .memberPlatform .platformBox .content li p span {
   color: #ffc13c;
 }
 html body .helpWrap {
-  display: none;
   width: 100%;
-  height: auto;
-  background: #252525;
+  height: calc(100vh - 96px);
+  background: #101010;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  display: none;
 }
 html body .helpWrap.display {
   display: block;
@@ -4183,43 +4155,40 @@ html body .helpWrap .helpHeader {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-bottom: solid 1px #ffc13c;
 }
 html body .helpWrap .helpHeader .selectBox {
   width: 92.27vw;
   height: 42px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background: #101010;
-  -webkit-box-shadow: 0 0 13px 2px #dedede;
-          box-shadow: 0 0 13px 2px #dedede;
+  background: #252525;
   position: relative;
   border-radius: 5px;
-  border: solid 1px #957222;
 }
 html body .helpWrap .helpHeader .selectBox p {
-  color: #9c8018;
-  font-size: 14px;
+  color: #ffc13c;
+  font-size: 4vw;
   font-weight: bold;
 }
-html body .helpWrap .helpHeader .selectBox .arrow_ic {
-  display: block;
-  width: 2vw;
-  height: 3.4vw;
+html body .helpWrap .helpHeader .selectBox::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%) rotate(270deg);
-          transform: translateY(-50%) rotate(270deg);
-  right: 4vw;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: #ffc13c transparent;
 }
 html body .helpWrap .helpHeader .selectBox select {
   position: absolute;
@@ -4232,6 +4201,9 @@ html body .helpWrap .helpHeader .selectBox select {
   color: #ffc13c;
   font-weight: bold;
   font-size: 14px;
+}
+html body .helpWrap .helpHeader .selectBox select option {
+  background: #252525;
 }
 html body .helpWrap .helpBody {
   width: 100%;
@@ -4247,7 +4219,7 @@ html body .helpWrap .helpBody ul {
 }
 html body .helpWrap .helpBody ul li {
   width: 100%;
-  height: 52px;
+  height: 42px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4257,22 +4229,22 @@ html body .helpWrap .helpBody ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #101010;
+  background: #252525;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 5px 0 #c8c8c880;
-          box-shadow: 0 0 5px 0 #c8c8c880;
   margin-bottom: 15px;
-  font-size: 14px;
+  color: #ffc13c;
+  font-size: 4vw;
   font-weight: bold;
-  color: #4d4d4d;
-  border: solid 1px #957222;
 }
 html body .helpInner {
-  display: none;
   width: 100%;
-  height: calc(100vh - 94px);
+  height: calc(100vh - 96px);
   background: #101010;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-bottom: 10px;
   overflow-y: auto;
+  display: none;
 }
 html body .helpInner.display {
   display: block;
@@ -4288,133 +4260,54 @@ html body .helpInner ul.display {
 html body .helpInner ul li {
   width: 100%;
   height: auto;
-  margin: 14px 0;
-}
-html body .helpInner ul li.active .title .arrow_ic {
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
-}
-html body .helpInner ul li.active .textBox {
-  display: block;
-}
-html body .helpInner ul li .title {
-  width: 92.27vw;
-  height: 52px;
-  background: #101010;
-  -webkit-box-shadow: 0 0 5px 0 #c8c8c880;
-          box-shadow: 0 0 5px 0 #c8c8c880;
-  border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
-  border: solid 1px #957222;
-}
-html body .helpInner ul li .title .icon {
-  display: block;
-  width: 15px;
-  height: 15px;
-  margin: 0 4vw;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-html body .helpInner ul li .title .arrow_ic {
-  display: block;
-  width: 2vw;
-  height: 3.4vw;
-  margin: 0 4vw;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-}
-html body .helpInner ul li .title p {
-  width: 100%;
-  font-size: 14px;
-  font-weight: bold;
-  color: #9c8018;
-}
-html body .helpInner ul li .textBox {
-  display: none;
-  width: 97vw;
-  height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px;
-  margin: 0 auto;
-  border: solid 1px #957222;
-  border-top: none;
-  background: #101010;
-  border-radius: 0 0 5px 5px;
+  padding: 16px;
 }
-html body .helpInner ul li .textBox.app {
-  background: none;
-  border: none;
-}
-html body .helpInner ul li .textBox p {
+html body .helpInner ul li p {
   color: #e2e2e2;
-  font-size: 14px;
+  font-size: 3.7vw;
   font-weight: bold;
   line-height: 22px;
   margin-bottom: 8px;
 }
-html body .helpInner ul li .textBox p.smallTitle {
-  font-size: 18px;
+html body .helpInner ul li p.smallTitle {
+  font-size: 4.5vw;
   margin: 10px 0;
   color: #ffc13c;
 }
-html body .helpInner ul li .textBox p.smallTitle.first {
+html body .helpInner ul li p.smallTitle:first-child {
   margin-top: 0;
 }
-html body .helpInner ul li .textBox p.secondTitle {
+html body .helpInner ul li p.secondTitle {
   color: #cd8c2f;
 }
-html body .helpInner ul li .textBox p.platform {
+html body .helpInner ul li p.platform {
   font-size: 18px;
   color: #171717;
   margin: 15px 0;
   text-align: center;
 }
-html body .helpInner ul li .textBox p.platform .downloadBtn {
+html body .helpInner ul li p.platform .downloadBtn {
   width: 144px;
   margin-left: 10px;
 }
-html body .helpInner ul li .textBox p a {
-  color: #10d718;
+html body .helpInner ul li p a {
+  color: #fb770a;
   text-decoration: none;
 }
-html body .helpInner ul li .textBox .img {
-  width: 100%;
-  height: 0;
-  padding-top: 87%;
-  margin: 10px 0;
+html body .helpInner ul li p .remind {
+  color: #35b751;
 }
-html body .helpInner ul li .textBox .img.transferWay {
-  padding-top: 111%;
-}
-html body .helpInner ul li .textBox .img.remote {
-  padding-top: 137%;
-}
-html body .helpInner ul li .textBox .img.license {
-  padding-top: 134%;
-}
-html body .helpInner ul li .textBox .btnBox {
+html body .helpInner ul li .btnBox {
   width: 100%;
   height: auto;
   margin: 20px 0;
 }
-html body .helpInner ul li .textBox .btnBox .btn {
+html body .helpInner ul li .btnBox .btn {
   width: 100%;
   height: 105px;
-  background: #292929;
+  background: #252525;
   border-radius: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4426,7 +4319,7 @@ html body .helpInner ul li .textBox .btnBox .btn {
           box-sizing: border-box;
   padding: 10px 16px;
 }
-html body .helpInner ul li .textBox .btnBox .btn i {
+html body .helpInner ul li .btnBox .btn i {
   display: block;
   width: 8.7vw;
   height: 8.7vw;
@@ -4434,19 +4327,19 @@ html body .helpInner ul li .textBox .btnBox .btn i {
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-html body .helpInner ul li .textBox .btnBox .btn p {
+html body .helpInner ul li .btnBox .btn p {
   font-size: 3.4vw;
   font-weight: bold;
   margin: 0;
   color: #ffc13c;
 }
-html body .helpInner ul li .textBox .btnBox .btn p:nth-of-type(1) {
+html body .helpInner ul li .btnBox .btn p:nth-of-type(1) {
   font-size: 5vw;
 }
-html body .helpInner ul li .textBox .btnBox .btn p:nth-of-type(2) {
+html body .helpInner ul li .btnBox .btn p:nth-of-type(2) {
   color: #cd8c2f;
 }
-html body .helpInner ul li .textBox .downloadBtn {
+html body .helpInner ul li .downloadBtn {
   width: 100%;
   height: 42px;
   background: -webkit-gradient(linear, left top, right top, from(#ff4b33), color-stop(98%, #d8001f));
@@ -4459,7 +4352,7 @@ html body .helpInner ul li .textBox .downloadBtn {
   letter-spacing: 1px;
   padding-bottom: 2px;
 }
-html body .helpInner ul li .textBox .downloadBtn:active, html body .helpInner ul li .textBox .downloadBtn.active {
+html body .helpInner ul li .downloadBtn:active, html body .helpInner ul li .downloadBtn.active {
   background: #b9001b;
 }
 html body .eventApplyType {

@@ -1,19 +1,16 @@
-//header back_arrow
+//header
 header .back_arrow {
     background: url('../images/icon/svg/arrow_w.svg') no-repeat;
     background-size: 100%;
 }
-//header refreash_ic
 header .refresh_ic {
     background: url('../images/icon/svg/refresh.svg') no-repeat;
     background-size: 100%;
 }
-//header .editBtn
 header .editBtn {
     background: url('../images/icon/edit.png') no-repeat;
     background-size: contain;
 }
-//header link
 header .link_ic {
     background: url('../images/icon/link.png') no-repeat;
     background-size: contain;
@@ -47,9 +44,12 @@ footer i {
     background: url('../images/icon/svg/eye.svg') no-repeat;
     background-size: 100%;
 }
-//新增雙箭頭
-.jumpWindow.bettingDetail .pageBox .arrowBox i {
-    background: url('../images/icon/svg/unfold.svg') no-repeat center;
+.jumpWindow .date_ic {
+    background: url('../images/icon/date_ic.png') no-repeat;
+    background-size: contain;
+}
+.jumpWindow .line_ic {
+    background: url('../images/icon/line_ic.png') no-repeat;
     background-size: contain;
 }
 //遊戲轉帳彈窗箭頭
@@ -114,7 +114,7 @@ footer i {
     background-size: 100%;
 }
 
-//wallet 轉存提ic
+//wallet
 .walletWrap .deposit_ic {
     background: url('../images/icon/svg/deposit.svg') no-repeat;
     background-size: 100%;
@@ -127,18 +127,15 @@ footer i {
     background: url('../images/icon/svg/withdrawal.svg') no-repeat;
     background-size: 100%;
 }
-//wallet db_arrow
 .walletWrap .openBtn .db_arrow {
     background: url('../images/icon/svg/unfold.svg') no-repeat;
     background-size: 100%;
 }
-//wallet 長按鈕
 .walletWrap .options .betting_ic,
 .walletWrap .options .deal_ic {
     background: url('../images/icon/walletIC.png') no-repeat;
     background-size: 200%;
 }
-//wallet arrow_ic
 .walletWrap .arrow_ic {
     background: url('../images/icon/svg/arrow_w.svg') no-repeat;
     background-size: 100%;
@@ -225,59 +222,7 @@ footer i {
     background-size: contain;
 }
 
-//helpWrap arrow_ic
-.helpWrap .selectBox .arrow_ic,
-.helpInner .title .arrow_ic {
-    background: url('../images/icon/svg/arrow_w.svg') no-repeat;
-    background-size: 100%;
-}
-//helpInner icon
-.helpInner .title .about {
-    background: url('../images/icon/svg/about.svg') no-repeat center;
-    background-size: contain;
-}
-.helpInner .title .new {
-    background: url('../images/icon/svg/lamp.svg') no-repeat center;
-    background-size: contain;
-}
-.helpInner .title .often {
-    background: url('../images/icon/svg/problem2.svg') no-repeat center;
-    background-size: contain;
-}
-//helpInner .img
-.helpInner .img.depositWay {
-    background: url('../images/說明圖/withdraw.png') no-repeat;
-    background-size: 100%;
-}
-.helpInner .img.deposit_water {
-    background: url('../images/說明圖/online01.png') no-repeat;
-    background-size: 100%;
-}
-.helpInner .img.withdrawalWay {
-    background: url('../images/說明圖/withdraw.png') no-repeat;
-    background-size: 100%;
-}
-.helpInner .img.transferWay {
-    background: url('../images/說明圖/transfer.png') no-repeat;
-    background-size: 100%;
-}
-.helpInner .img.tv {
-    background: url('../images/說明圖/tv.png') no-repeat;
-    background-size: 100%;
-}
-.helpInner .img.remote {
-    background: url('../images/說明圖/remote.png') no-repeat;
-    background-size: 100%;
-}
-.helpInner .img.license {
-    background: url('../images/說明圖/license.jpg') no-repeat;
-    background-size: 100%;
-}
 //新增help客服頁ic
-.helpInner .btnBox .online_ic {
-    background: url('../images/icon/svg/service3.svg') no-repeat center;
-    background-size: contain;
-}
 .helpInner .btnBox .line_ic {
     background: url('../images/icon/svg/line.svg') no-repeat center;
     background-size: contain;
@@ -390,12 +335,11 @@ footer i {
 //header - logo
 header .logo {
     height: 100%;
+    object-fit: contain;
 }
 
 //ad - banner
 .single-item {
-    width: 100%;
-    height: 45vw;
 
     img {
         width: 100%;
@@ -450,13 +394,6 @@ header .logo {
     }
 }
 
-//app
-.appWrap img {
-    width: 100%;
-    height: 96px;
-    object-fit: cover;
-}
-
 //eventWindow img
 .eventWindow {
 
@@ -466,6 +403,7 @@ header .logo {
     }
 }
 
+//invite
 .inviteWrap .qr {
     width: 100%;
     object-fit: contain;
@@ -473,4 +411,11 @@ header .logo {
 .inviteWrap .inviteImg {
     width: 100%;
     object-fit: contain;
+}
+
+//help
+.helpInner img {
+    width: 100%;
+    object-fit: contain;
+    margin: 20px 0;
 }

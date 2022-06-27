@@ -1,9 +1,7 @@
 //幫助中心外層
 .helpWrap {
+    @include bgStyle_1;
     display: none;
-    width: 100%;
-    height: auto;
-    background: $mainBG_2;
 
     &.display {
         display: block;
@@ -16,35 +14,35 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
         border-bottom: solid 1px $mainBorder_1;
 
         .selectBox {
             width: 92.27vw;
             height: 42px;
+            box-sizing: border-box;
+            padding-left: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: $mainBG_1;
-            box-shadow: 0 0 13px 2px $boxshadow_1;
+            background: $mainBG_2;
             position: relative;
             border-radius: 5px;
-            border: solid 1px $mainBorder_2;
 
             p {
-                color: $title_1;
-                font-size: 14px;
+                color: $mainWord_1;
+                font-size: 4vw;
                 font-weight: bold;
             }
 
-            .arrow_ic {
-                display: block;
-                width: 2vw;
-                height: 3.4vw;
+            &::before {
+                content: "";
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%) rotate(270deg);
-                right: 4vw;
-                transition: 0.3s all;
+                right: 20px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 5px 0 5px;
+                border-color: $mainBorder_1 transparent;
             }
 
             select {
@@ -58,6 +56,10 @@
                 color: $mainWord_1;
                 font-weight: bold;
                 font-size: 14px;
+
+                option {
+                    background: $mainBG_2;
+                }
             }
         }
     }
@@ -76,18 +78,16 @@
 
             li {
                 width: 100%;
-                height: 52px;
+                height: 42px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: $mainBG_1;
+                background: $mainBG_2;
                 border-radius: 5px;
-                box-shadow: 0 0 5px 0 $boxshadow_2;
                 margin-bottom: 15px;
-                font-size: 14px;
+                color: $mainWord_1;
+                font-size: 4vw;
                 font-weight: bold;
-                color: $title_2;
-                border: solid 1px $mainBorder_2;
             }
         }
     }
@@ -95,11 +95,8 @@
 
 //幫助中心內層
 .helpInner {
+    @include bgStyle_1;
     display: none;
-    width: 100%;
-    height: calc(100vh - 94px);
-    background: $mainBG_1;
-    overflow-y: auto;
 
     &.display {
         display: block;
@@ -117,174 +114,95 @@
         li {
             width: 100%;
             height: auto;
-            margin: 14px 0;
+            box-sizing: border-box;
+            padding: 16px;
 
-            &.active {
+            p {
+                color: $mainWord_3;
+                font-size: 3.7vw;
+                font-weight: bold;
+                line-height: 22px;
+                margin-bottom: 8px;
 
-                .title {
+                &.smallTitle {
+                    font-size: 4.5vw;
+                    margin: 10px 0;
+                    color: $mainWord_1;
 
-                    .arrow_ic {
-                        transform: rotate(270deg);
+                    &:first-child {
+                        margin-top: 0;
                     }
                 }
 
-                .textBox {
-                    display: block;
+                &.secondTitle {
+                    color: $mainWord_4;
+                }
+
+                &.platform {
+                    font-size: 18px;
+                    color: $help_Title;
+                    margin: 15px 0;
+                    text-align: center;
+
+                    .downloadBtn {
+                        width: 144px;
+                        margin-left: 10px;
+                    }
+                }
+
+                a {
+                    color: $click;
+                    text-decoration: none;
+                }
+
+                .remind {
+                    color: $remind;
                 }
             }
 
-            .title {
-                width: 92.27vw;
-                height: 52px;
-                background: $mainBG_1;
-                box-shadow: 0 0 5px 0 $boxshadow_2;
-                border-radius: 5px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto;
-                border: solid 1px $mainBorder_2;
-
-                .icon {
-                    display: block;
-                    width: 15px;
-                    height: 15px;
-                    margin: 0 4vw;
-                    flex-shrink: 0;
-                }
-
-                .arrow_ic {
-                    display: block;
-                    width: 2vw;
-                    height: 3.4vw;
-                    margin: 0 4vw;
-                    flex-shrink: 0;
-                    transform: rotate(180deg);
-                    transition: 0.3s all;
-                }
-
-                p {
-                    width: 100%;
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: $title_1;
-                }
-            }
-
-            .textBox {
-                display: none;
-                width: 97vw;
+            .btnBox {
+                width: 100%;
                 height: auto;
-                box-sizing: border-box;
-                padding: 10px;
-                margin: 0 auto;
-                border: solid 1px $mainBorder_2;
-                border-top: none;
-                background: $mainBG_1;
-                border-radius: 0 0 5px 5px;
+                margin: 20px 0;
 
-                &.app {
-                    background: none;
-                    border: none;
-                }
+                .btn {
+                    width: 100%;
+                    height: 105px;
+                    background: $mainBG_2;
+                    border-radius: 16px;
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding: 10px 16px;
 
-                p {
-                    color: $mainWord_3;
-                    font-size: 14px;
-                    font-weight: bold;
-                    line-height: 22px;
-                    margin-bottom: 8px;
+                    i {
+                        display: block;
+                        width: 8.7vw;
+                        height: 8.7vw;
+                        margin-right: 16px;
+                        flex-shrink: 0;
+                    }
 
-                    &.smallTitle {
-                        font-size: 18px;
-                        margin: 10px 0;
+                    p {
+                        font-size: 3.4vw;
+                        font-weight: bold;
+                        margin: 0;
                         color: $mainWord_1;
 
-                        &.first {
-                            margin-top: 0;
+                        &:nth-of-type(1) {
+                            font-size: 5vw;
                         }
-                    }
-
-                    &.secondTitle {
-                        color: $mainWord_4;
-                    }
-
-                    &.platform {
-                        font-size: 18px;
-                        color: $help_Title;
-                        margin: 15px 0;
-                        text-align: center;
-
-                        .downloadBtn {
-                            width: 144px;
-                            margin-left: 10px;
-                        }
-                    }
-
-                    a {
-                        color: $click;
-                        text-decoration: none;
-                    }
-                }
-
-                .img {
-                    width: 100%;
-                    height: 0;
-                    padding-top: 87%;
-                    margin: 10px 0;
-
-                    &.transferWay {
-                        padding-top: 111%;
-                    }
-
-                    &.remote {
-                        padding-top: 137%;
-                    }
-
-                    &.license {
-                        padding-top: 134%;
-                    }
-                }
-
-                .btnBox {
-                    width: 100%;
-                    height: auto;
-                    margin: 20px 0;
-
-                    .btn {
-                        width: 100%;
-                        height: 105px;
-                        @include helpBtn;
-
-                        i {
-                            display: block;
-                            width: 8.7vw;
-                            height: 8.7vw;
-                            margin-right: 16px;
-                            flex-shrink: 0;
-                        }
-
-                        p {
-                            font-size: 3.4vw;
-                            font-weight: bold;
-                            margin: 0;
-                            color: $mainWord_1;
-
-                            &:nth-of-type(1) {
-                                font-size: 5vw;
-                            }
-                            &:nth-of-type(2) {
-                                color: $mainWord_4;
-                            }
+                        &:nth-of-type(2) {
+                            color: $mainWord_4;
                         }
                     }
                 }
+            }
 
-                .downloadBtn {
-                    width: 100%;
-                    height: 42px;
-                    @include mainBtn;
-                }
+            .downloadBtn {
+                width: 100%;
+                height: 42px;
+                @include mainBtn;
             }
         }
     }

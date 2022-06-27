@@ -217,6 +217,8 @@
             form {
                 width: 100%;
                 height: auto;
+                max-height: 70vh;
+                overflow-y: auto;
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
@@ -227,12 +229,44 @@
                     width: 100%;
                     height: auto;
                     position: relative;
-                    margin-bottom: 6vw;
+                    margin-bottom: 9vw;
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding-left: 20px;
+
+                    &:nth-last-of-type(1),
+                    &:nth-last-of-type(2) {
+                        margin-bottom: 4vw;
+                    }
+
+                    em {
+                        position: absolute;
+                        left: 0;
+                        color: $remind_Sp;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
 
                     input {
                         width: 100%;
                         height: 9.87vw;
                         @include mainInput;
+
+                        &.line {
+                            padding-left: 12vw;
+                        }
+                    }
+
+                    .remind {
+                        position: absolute;
+                        left: 20px;
+                        top: 9.87vw;
+                        width: 95%;
+                        color: $remind_Sp;
+                        font-size: 12px;
+                        font-weight: bold;
+                        line-height: 15px;
                     }
 
                     &.isCheck {
@@ -246,7 +280,7 @@
                         }
 
                         p {
-                            color: $mainWord_2;
+                            color: $mainWord_1;
                             font-size: 3.4vw;
                             font-weight: bold;
                             
@@ -259,11 +293,23 @@
 
                     .eye {
                         position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
                         right: 10px;
                         width: 6.13vw;
                         height: 4.26vw;
+                    }
+
+                    .date_ic {
+                        position: absolute;
+                        right: 15px;
+                        width: 4vw;
+                        height: 4vw;
+                    }
+
+                    .line_ic {
+                        position: absolute;
+                        width: 8vw;
+                        height: 8vw;
+                        left: 6vw;
                     }
                 }
 
@@ -271,6 +317,7 @@
                     width: 100%;
                     height: 9.87vw;
                     @include mainBtn;
+                    flex-shrink: 0;
                 }
             }
         }
@@ -820,7 +867,7 @@
                 button {
                     width: 100%;
                     height: 38px;
-                    @include changeBtn;
+                    @include noBgBtn_Normal;
                     border-radius: 3px;
                 }
             }
@@ -837,7 +884,7 @@
                     width: 32%;
                     height: 38px;
                     margin: 0 2% 2% 0;
-                    @include changeBtn;
+                    @include noBgBtn_Normal;
                     border-radius: 3px;
 
                     &:nth-of-type(3n) {
