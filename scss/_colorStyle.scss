@@ -35,23 +35,11 @@ $click: #fb770a;
 $remind: #35b751;
 $remind_Sp: #e11515;
 
-//大選項字色
-$optionColor: #4d4d4d;
-
-//標題字
-$title_1: #9c8018;
-$title_2: #4d4d4d;
-$title_Time: #848484;
-
 //選擇列字色+選擇列active
 $choose_BG: #262626;
 $choose_ActiveBG: #181818;
 $choose_Word: #ffc13c;
 $choose_ActiveWord: #ff4719;
-
-//陰影色
-$boxshadow_1: #dedede;
-$boxshadow_2: #c8c8c880;
 
 //彈窗背景透明底
 $filter: #00000066;
@@ -203,7 +191,7 @@ $ad_Arrow: #ffffff;
 }
 
 //member
-@mixin memberWallet {
+@mixin member_WalletBox {
     background: #faf8f6;
     color: #000000;
     display: flex;
@@ -256,14 +244,6 @@ $ad_Arrow: #ffffff;
 $vip_LevelBar: #3e3e3e;
 $vip_LevelCur: #0bca17;
 $vip_Word: #ffffff;
-$vipDetail_SecondBG: #f7ede1;
-
-//eventApply
-$currentBG: #ece2ca;
-
-//pointWindow
-$point_BG: #e8cb8e;
-$point_Border: #957222;
 
 //card
 $cardLinear: linear-gradient(to right,#fec026 0%,#ffae00 100%);
@@ -359,12 +339,7 @@ $cardWord: #000000;
     }
 }
 
-//help
-$help_Title: #171717;
-$help_Word: #4d4d4d;
-
 //slotPage
-$slotGame_Word: #4d4d4d;
 @mixin slotSearch {
     background: #060606;
     border: solid 1px #a88335;

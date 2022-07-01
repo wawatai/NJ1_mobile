@@ -371,7 +371,7 @@
         </ul>
     </footer>
     <!--彈窗-->
-    <div class="filter">
+    <div class="filter display">
         <!--請先登入-->
         <div class="jumpWindow plsGo">
             <div class="title">
@@ -421,7 +421,7 @@
             </form>
         </div> 
         <!--註冊-->
-        <div class="jumpWindow registerWindow">
+        <div class="jumpWindow registerWindow display">
             <div class="title">
                 <div class="icon"></div>
                 <p>会員登録</p>
@@ -429,51 +429,83 @@
             </div>
             <form>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="アカウントID">
-                    <p class="remind">アカウント番号には、英字（大文字と小文字の両方）が含まれている必要があります。少なくとも6文字必要です</p>
+                    <p class="smallTitle">アカウントID</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text">
+                    </div>
+                    <p class="remind">アカウント番号には、英字（半角英字・数字のみでも可能です。）が含まれている必要があります。少なくとも6文字必要です</p>
                 </label>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="パスワード">
-                    <i class="eye"></i>
+                    <p class="smallTitle">パスワード</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text">
+                        <i class="eye"></i>
+                    </div>
                     <p class="remind">英語の数字と限定された特殊記号（@._$#%^&*+-）を使用できます</p>
                 </label>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="パスワードを確認">
+                    <p class="smallTitle">パスワード再確認</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text">
+                    </div>
                 </label>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="お名前">
+                    <p class="smallTitle">お名前</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text">
+                    </div>
                 </label>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="誕生日">
-                    <i class="date_ic"></i>
+                    <p class="smallTitle">誕生日</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text">
+                        <i class="date_ic"></i>
+                    </div>
                 </label>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="携帯電話">
+                    <p class="smallTitle">携帯電話</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text" class="phone">
+                        <button class="code" disabled>認証コードを取得する</button>
+                    </div>
                 </label>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="携帯認証コード">
+                    <p class="smallTitle">携帯認証コード</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text">
+                    </div>
                 </label>
                 <label>
-                    <em>※</em>
-                    <input type="text" placeholder="紹介コード">
+                    <p class="smallTitle">メールアドレス</p>
+                    <div>
+                        <em>※</em>
+                        <input type="text">
+                    </div>
                 </label>
                 <label>
-                    <input type="text" placeholder="誕生日">
+                    <p class="smallTitle">紹介コード</p>
+                    <div>
+                        <input type="text">
+                    </div>
+                    <p class="remind">紹介コードがない場合は記入しないでください</p>
                 </label>
                 <label>
-                    <input type="text" placeholder="LINE ID" class="line">
-                    <i class="line_ic"></i>
+                    <p class="smallTitle">LINE ID</p>
+                    <div>
+                        <input type="text" class="line">
+                        <i class="line_ic"></i>
+                    </div>
                 </label>
                 <label class="isCheck">
                     <input type="checkbox">
-                    <div>
+                    <div class="checkWord">
                         <p>全部読んで同意する</p>
                         <p class="ruleBtn">利用規約とプライバシーポリシー</p>
                     </div>

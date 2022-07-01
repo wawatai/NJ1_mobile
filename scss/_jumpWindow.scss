@@ -217,7 +217,7 @@
             form {
                 width: 100%;
                 height: auto;
-                max-height: 70vh;
+                max-height: 66vh;
                 overflow-y: auto;
                 box-sizing: border-box;
                 display: flex;
@@ -229,49 +229,91 @@
                     width: 100%;
                     height: auto;
                     position: relative;
-                    margin-bottom: 9vw;
+                    margin-bottom: 3vw;
                     display: flex;
-                    align-items: center;
+                    flex-direction: column;
                     box-sizing: border-box;
-                    padding-left: 20px;
+                    padding: 0 13px 0 20px;
 
                     &:nth-last-of-type(1),
                     &:nth-last-of-type(2) {
                         margin-bottom: 4vw;
                     }
 
-                    em {
-                        position: absolute;
-                        left: 0;
-                        color: $remind_Sp;
-                        font-size: 14px;
+                    .smallTitle {
+                        color: $mainWord_2;
+                        font-size: 3.7vw;
                         font-weight: bold;
+                        margin-bottom: 1vw;
                     }
 
-                    input {
+                    div {
                         width: 100%;
-                        height: 9.87vw;
-                        @include mainInput;
+                        height: auto;
+                        display: flex;
+                        align-items: center;
 
-                        &.line {
-                            padding-left: 12vw;
+                        &.checkWord {
+                            display: block;
+                        }
+
+                        em {
+                            position: absolute;
+                            left: 0;
+                            color: $remind_Sp;
+                            font-size: 14px;
+                            font-weight: bold;
+                        }
+    
+                        input {
+                            width: 100%;
+                            height: 9.87vw;
+                            @include mainInput;
+    
+                            &.line {
+                                padding-left: 12vw;
+                            }
+                        }
+
+                        .eye {
+                            position: absolute;
+                            right: 20px;
+                            width: 6.13vw;
+                            height: 4.26vw;
+                        }
+    
+                        .date_ic {
+                            position: absolute;
+                            right: 25px;
+                            width: 4vw;
+                            height: 4vw;
+                        }
+    
+                        .line_ic {
+                            position: absolute;
+                            width: 8vw;
+                            height: 8vw;
+                            left: 23px;
                         }
                     }
 
                     .remind {
-                        position: absolute;
-                        left: 20px;
-                        top: 9.87vw;
-                        width: 95%;
+                        // position: absolute;
+                        // left: 4px;
+                        // top: 10.5vw;
+                        width: 111%;
                         color: $remind_Sp;
-                        font-size: 12px;
+                        font-size: 2vw;
                         font-weight: bold;
-                        line-height: 15px;
+                        line-height: 3.7vw;
+                        transform: scale(0.9);
+                        transform-origin: left;
                     }
 
                     &.isCheck {
                         display: flex;
                         align-items: center;
+                        flex-direction: row;
 
                         input[type = checkbox]{
                             width: 4.5vw;
@@ -291,25 +333,14 @@
                         }
                     }
 
-                    .eye {
-                        position: absolute;
-                        right: 10px;
-                        width: 6.13vw;
-                        height: 4.26vw;
-                    }
-
-                    .date_ic {
-                        position: absolute;
-                        right: 15px;
-                        width: 4vw;
-                        height: 4vw;
-                    }
-
-                    .line_ic {
-                        position: absolute;
-                        width: 8vw;
+                    .code {
+                        width: auto;
                         height: 8vw;
-                        left: 6vw;
+                        position: absolute;
+                        right: 17px;
+                        @include secondBtn;
+                        font-size: 2vw;
+                        padding: 0 7px;
                     }
                 }
 
@@ -731,318 +762,6 @@
 
                     100% {
                         transform: rotate(360deg);
-                    }
-                }
-            }
-        }
-    }
-
-    //查看積分
-    .checkPoint {
-        width: 92.27vw;
-        height: auto;
-        background: $mainBG_1;
-        border-radius: 5px;
-        overflow: hidden;
-        display: none;
-
-        &.display {
-            display: block;
-        }
-
-        .total {
-            width: 100%;
-            height: 19.47vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-
-            .smallTitle {
-                color: $title_2;
-                font-weight: bold;
-                font-size: 16px;
-            }
-
-            .point {
-                font-weight: bold;
-                font-size: 26px;
-                color: $money_Sp;
-                margin-top: 8px;
-            }
-        }
-
-        ul {
-            width: 100%;
-            height: auto;
-            max-height: 53.86vw;
-            overflow-y: auto;
-
-            li {
-                width: 100%;
-                height: 10.67vw;
-                box-sizing: border-box;
-                padding-right: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-bottom: solid 1px $mainBorder_1;
-
-                .name {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 30.4vw;
-                    height: 6.13vw;
-                    border-right: solid 1px $mainBorder_1;
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: $title_2;
-                }
-
-                .point {
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: $mainWord_1;
-                    position: relative;
-
-                    .info {
-                        display: none;
-                        position: absolute;
-                        width: auto;
-                        height: auto;
-                        left: 0;
-                        bottom: -38px;
-                        z-index: 5;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 12px;
-                        letter-spacing: 1px;
-                        @include smallTip;
-
-                        &.display {
-                            display: flex;
-                        }
-
-                        &::before {
-                            top: -6px;
-                            left: 10px;
-                        }
-                    }
-                }
-
-                button {
-                    width: 17.87vw;
-                    height: 6.13vw;
-                    @include mainBtn;
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-
-    //帳戶平台彈窗
-    .accWindow,.platWindow {
-        width: 92.27vw;
-        height: auto;
-        background: $mainBG_1;
-        border-radius: 1.5vw;
-        overflow: hidden;
-        display: none;
-
-        &.display {
-            display: block;
-        }
-
-        .content {
-            width: 100%;
-            height: auto;
-            box-sizing: border-box;
-            padding: 15px 18px;
-
-            .bigBox {
-                width: 100%;
-                height: auto;
-
-                button {
-                    width: 100%;
-                    height: 38px;
-                    @include noBgBtn_Normal;
-                    border-radius: 3px;
-                }
-            }
-            
-            .smallBox {
-                width: 100%;
-                height: auto;
-                margin-top: 10px;
-                font-size: 0;
-                display: flex;
-                flex-wrap: wrap;
-
-                button {
-                    width: 32%;
-                    height: 38px;
-                    margin: 0 2% 2% 0;
-                    @include noBgBtn_Normal;
-                    border-radius: 3px;
-
-                    &:nth-of-type(3n) {
-                        margin-right: 0;
-                    }
-                }
-            }
-        }
-    }
-
-    //注單明細
-    // .bettingDetail {
-    //     width: 92.27vw;
-    //     height: calc(100vh - 60px);
-    //     background: $backgroundColor_2;
-    //     border-radius: 1.5vw;
-    //     overflow: hidden;
-    //     display: none;
-
-    //     &.display {
-    //         display: block;
-    //     }
-
-    //     .content {
-    //         width: 92%;
-    //         height: auto;
-    //         margin: 0 auto;
-
-    //         .smallTitle {
-    //             width: 100%;
-    //             height: 36px;
-    //             display: flex;
-    //             align-items: center;
-    //             border-bottom: solid 1px $borderColor_3;
-    //             font-size: 15px;
-    //             font-weight: bold;
-    //             color: $font-color_12;
-    //             margin-bottom: 10px;
-    //         }
-
-    //         .mainCnt {
-    //             width: 100%;
-    //             height: calc(100vh - 235px);
-    //             padding: 5px 5px 40px;
-    //             box-sizing: border-box;
-    //             background: $backgroundColor_4;
-    //             border-bottom: solid 1px $borderColor_2;
-    //             overflow-y: auto;
-
-    //             .noData {
-    //                 width: 100%;
-    //                 height: 80px;
-    //                 display: none;
-    //                 align-items: center;
-    //                 justify-content: center;
-    //                 color: $font-color_1;
-    //                 font-weight: bold;
-    //                 font-size: 16px;
-
-    //                 &.display {
-    //                     display: flex;
-    //                 }
-    //             }
-    //         }
-
-    //         .pageBox {
-    //             width: 100%;
-    //             padding-top: 15px;
-    //             box-sizing: border-box;
-    //             height: auto;
-
-    //             .arrowBox {
-    //                 width: 100%;
-    //                 height: auto;
-    //                 display: flex;
-    //                 justify-content: center;
-
-    //                 i {
-    //                     display: block;
-    //                     width: 12px;
-    //                     height: 12px;
-
-    //                     &.prev {
-    //                         transform: rotate(90deg);
-    //                         margin-right: 15px;
-    //                     }
-
-    //                     &.next {
-    //                         transform: rotate(-90deg);
-    //                         margin-left: 15px;
-    //                     }
-    //                 }
-    //             }
-
-    //             p {
-    //                 font-size: 12px;
-    //                 margin-top: 10px;
-    //                 font-weight: bold;
-    //                 color: $font-color_1;
-    //                 text-align: center;
-
-    //                 span {
-    //                     padding: 0 5px;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-
-    //會員紅利詳情
-    .pointWindow {
-        width: 92.27vw;
-        height: auto;
-        background: $mainBG_1;
-        border-radius: 5px;
-        overflow: hidden;
-        display: none;
-
-        &.display {
-            display: block;
-        }
-
-        .content {
-            width: 100%;
-            height: auto;
-            box-sizing: border-box;
-            padding: 24px;
-
-            ul {
-                width: 100%;
-                height: auto;
-                border: solid 1px $mainBorder_2;
-                border-radius: 5px;
-                overflow: hidden;
-
-                li {
-                    width: 100%;
-                    height: 32px;
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: $mainWord_1;
-                    background: $mainBG_2;
-                    border-bottom: solid 1px $point_Border;
-                    display: flex;
-                    align-items: center;
-
-                    &:last-child {
-                        border: none;
-                    }
-
-                    &.title {
-                        background: $point_BG;
-                        font-size: 16px;
-                    }
-
-                    p {
-                        width: 50%;
-                        text-align: center;
                     }
                 }
             }

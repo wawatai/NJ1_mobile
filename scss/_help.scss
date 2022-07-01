@@ -138,18 +138,6 @@
                     color: $mainWord_4;
                 }
 
-                &.platform {
-                    font-size: 18px;
-                    color: $help_Title;
-                    margin: 15px 0;
-                    text-align: center;
-
-                    .downloadBtn {
-                        width: 144px;
-                        margin-left: 10px;
-                    }
-                }
-
                 a {
                     color: $click;
                     text-decoration: none;

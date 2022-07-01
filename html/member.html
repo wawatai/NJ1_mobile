@@ -26,7 +26,9 @@
         <div class="memberWrap">
             <!--玩家資訊-->
             <div class="user">
-                <div class="info" onclick="window.location.href='./member_info.html'">
+                <!--上列-->
+                <div class="info">
+                    <!--左-->
                     <div>
                         <div class="account">
                             <div class="lv">ゴールド会員</div>
@@ -34,44 +36,48 @@
                         </div>
                         <p class="date">参加209日</p>
                     </div>
-                    <button class="infoBtn">個人情報</button>
+                    <!--右-->
+                    <button class="infoBtn" onclick="window.location.href='./member_info.html'">個人情報</button>
                 </div>
+                <!--入金顯示框-->
                 <div class="wallet">
                     <p>¥0.00</p>
                     <button onclick="window.location.href='./deposit.html'">今すぐ入金</button>
                 </div>
+                <!--大按鈕區-->
                 <div class="btnBox">
                     <button onclick="window.location.href='./wallet.html'">
-                        <i class="wallet_ic"></i>
+                        <i class="bigList_ic wallet"></i>
                         <div class="text">
                             マイウォレット
                             <p>MY PURSE</p>
                         </div>
                     </button>
                     <button onclick="window.location.href='./vip.html'">
-                        <i class="vip_ic"></i>
+                        <i class="bigList_ic vip"></i>
                         <div class="text">
                             VIP
                             <p>VIP</p>
                         </div>
                     </button>
                 </div>
+                <!--其他選單-->
                 <ul>
                     <li onclick="window.location.href='./bettingRecord.html'">
-                        <i class="bet_ic"></i>
+                        <i class="list_ic bettingRcord"></i>
                         <p>ベット履歷</p>
                     </li>
                     <li onclick="window.location.href='./dealRecord.html'">
-                        <i class="deal_ic"></i>
+                        <i class="list_ic dealRecord"></i>
                         <p>取引履歷</p>
                     </li>
                     <li onclick="window.location.href='./mail.html'">
-                        <i class="mail_ic"></i>
+                        <i class="list_ic mail"></i>
                         <p>インボックス</p>
                         <em class="bubble">3</em>
                     </li>
                     <li onclick="window.location.href='./card.html'">
-                        <i class="card_ic"></i>
+                        <i class="list_ic card"></i>
                         <p>口座設定</p>
                     </li>
                 </ul>
@@ -79,56 +85,49 @@
             <!--選項條-->
             <div class="options" onclick="window.location.href='./invite.html'">
                 <p>
-                    <i class="point_ic"></i>
+                    <i class="member_ic invite"></i>
                     メンバーを招待する
                 </p>
                 <i class="arrow_ic"></i>
             </div>
             <div class="options" onclick="window.location.href='./searchPoint.html'">
                 <p>
-                    <i class="point_ic"></i>
+                    <i class="member_ic point"></i>
                     ∞4世代ボーナス報酬
                 </p>
                 <i class="arrow_ic"></i>
             </div>
             <div class="options" onclick="window.location.href='./eventApply.html'">
                 <p>
-                    <i class="eventApply_ic"></i>
+                    <i class="member_ic eventApply"></i>
                     プロモーション申請
                 </p>
                 <i class="arrow_ic"></i>
             </div>
             <div class="options" onclick="window.location.href='./help_new.html'">
                 <p>
-                    <i class="help_ic"></i>
+                    <i class="member_ic helpNew"></i>
                     ヘルプ​センター
                 </p>
                 <i class="arrow_ic"></i>
             </div>
             <div class="options" onclick="window.location.href='./help_about.html'">
                 <p>
-                    <i class="about_ic"></i>
+                    <i class="member_ic helpAbout"></i>
                     当社について
                 </p>
                 <i class="arrow_ic"></i>
             </div>
-            <!-- <div class="options" onclick="window.location.href='./joinUs.html'">
-                <div>
-                    <i class="join_ic"></i>
-                    <p>加入我們</p>
-                </div>
-                <i class="arrow_ic"></i>
-            </div> -->
             <div class="options opDownload">
                 <p>
-                    <i class="app_ic"></i>
+                    <i class="member_ic app"></i>
                     フォローする
                 </p>
                 <i></i>
             </div>
             <div class="options opLang">
                 <p>
-                    <i class="lang_ic"></i>
+                    <i class="member_ic lang"></i>
                     <span class="lang_jp active">日本語</span>
                     <span class="lang_tw">繁體中文</span>
                     <span class="lang_ch">简体中文</span>
@@ -137,7 +136,7 @@
             </div>
             <div class="options" onclick="window.location.href='../index.html'">
                 <p>
-                    <i class="logout_ic"></i>
+                    <i class="member_ic logout"></i>
                     ログアウト
                 </p>
                 <i></i>

@@ -1,3 +1,21 @@
+//member
+.memberWrap .bigList_ic {
+    background: url('../images/icon/memberBigBtn.png') no-repeat;
+    background-size: 200%;
+}
+.memberWrap .list_ic {
+    background: url('../images/icon/memberMainBtn.png') no-repeat;
+    background-size: 500%;
+}
+.memberWrap .member_ic {
+    background: url('../images/icon/memberIC.png') no-repeat;
+    background-size: 900%;
+}
+.memberWrap .arrow_ic {
+    background: url('../images/icon/svg/arrow_w.svg') no-repeat;
+    background-size: 100%;
+}
+
 //header
 header .back_arrow {
     background: url('../images/icon/svg/arrow_w.svg') no-repeat;
@@ -139,40 +157,6 @@ footer i {
 .walletWrap .arrow_ic {
     background: url('../images/icon/svg/arrow_w.svg') no-repeat;
     background-size: 100%;
-}
-
-//member .arrow_ic
-.memberWrap .arrow_ic {
-    background: url('../images/icon/svg/arrow_w.svg') no-repeat;
-    background-size: 100%;
-}
-//member .wallet_ic+vip_ic
-.memberWrap .wallet_ic,
-.memberWrap .vip_ic {
-    background: url('../images/icon/memberBigBtn.png') no-repeat;
-    background-size: 200%;
-}
-//member .user ul ic
-.memberWrap .bet_ic,
-.memberWrap .deal_ic,
-.memberWrap .mail_ic,
-.memberWrap .card_ic {
-    background: url('../images/icon/memberMainBtn.png') no-repeat;
-    background-size: 400%;
-}
-//member 選項條ic
-.memberWrap .point_ic {
-    background: url('../images/icon/walletIC.png') no-repeat;
-    background-size: 200%;
-}
-.memberWrap .eventApply_ic,
-.memberWrap .help_ic,
-.memberWrap .about_ic,
-.memberWrap .app_ic,
-.memberWrap .lang_ic,
-.memberWrap .logout_ic {
-    background: url('../images/icon/memberIC.png') no-repeat;
-    background-size: 700%;
 }
 
 //member_info
@@ -321,12 +305,6 @@ footer i {
     background: url('../images/icon/copy.png') no-repeat;
     background-size: contain;
 }
-
-//finger
-// .vipDetail .finger {
-//     background: url('../images/icon/finger.png') no-repeat center;
-//     background-size: contain;
-// }
 
 
 ////////img↓
