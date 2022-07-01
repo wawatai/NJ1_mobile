@@ -1522,9 +1522,9 @@ html body .filter .jumpWindow.registerWindow form label:nth-last-of-type(1), htm
 }
 html body .filter .jumpWindow.registerWindow form label .smallTitle {
   color: #fb770a;
-  font-size: 3.7vw;
+  font-size: 4vw;
   font-weight: bold;
-  margin-bottom: 1vw;
+  margin-bottom: 1.5vw;
 }
 html body .filter .jumpWindow.registerWindow form label div {
   width: 100%;
@@ -1596,15 +1596,14 @@ html body .filter .jumpWindow.registerWindow form label div .line_ic {
   left: 23px;
 }
 html body .filter .jumpWindow.registerWindow form label .remind {
-  width: 111%;
+  width: 100%;
   color: #e11515;
-  font-size: 2vw;
+  font-size: 3.4vw;
   font-weight: bold;
-  line-height: 3.7vw;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  line-height: 4vw;
   -webkit-transform-origin: left;
           transform-origin: left;
+  margin-top: 1.5vw;
 }
 html body .filter .jumpWindow.registerWindow form label.isCheck {
   display: -webkit-box;

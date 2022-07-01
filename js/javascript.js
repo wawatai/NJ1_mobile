@@ -543,3 +543,19 @@ $(function(){
         }
     })
 })
+
+//註冊頁判斷打字按鈕
+$(function(){
+    $($(".registerWindow .code").prev("input")).on("input",function(){
+        if($(".registerWindow .code").prev("input").val() == "")
+        {
+            $(".registerWindow .code")
+            .attr("disabled",true);
+        }
+        else
+        {
+            $(".registerWindow .code")
+            .attr("disabled",false);
+        }
+    })
+})
